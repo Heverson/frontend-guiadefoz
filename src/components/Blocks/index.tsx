@@ -56,7 +56,7 @@ interface ISText {
 	size?: 'small' | 'normal' | 'large'
 }
 
-const SText = styled.h1<ISText>`
+const SText = styled.p<ISText>`
 	display: block;
 	${({ size }) => {
 		if (!size) size = 'normal'
@@ -93,7 +93,7 @@ interface ISList {
 	spacing?: 'small' | 'normal' | 'large'
 }
 
-const SList = styled.h1<ISList>`
+const SList = styled.ul<ISList>`
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -110,7 +110,7 @@ const SList = styled.h1<ISList>`
 
 interface ISItem {}
 
-const SItem = styled.h1<ISItem>`
+const SItem = styled.li<ISItem>`
 	display: block;
 `
 
