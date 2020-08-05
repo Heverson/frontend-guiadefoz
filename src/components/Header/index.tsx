@@ -24,6 +24,18 @@ const SHMenu = styled(SWrap)`
 				padding: .5rem;
 				margin: -.5rem;
 			}
+			&:first-child {
+				display: none;
+			}
+		}
+	}
+	@media (min-width: 600px) {
+		> ${SItems} {
+			> ${SItem} {
+				&:first-child {
+					display: block;
+				}
+			}
 		}
 	}
 	@media (min-width: 800px) {

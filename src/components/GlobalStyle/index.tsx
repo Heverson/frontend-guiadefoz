@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 	
 	p, ul, ol {
+		margin: 0;
 		line-height: 1.5;
 	}
 	
@@ -48,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
 	
 	h1, h2, h3, h4 {
 		margin: 0;
-		color: #AD1457;
+		color: #1976D2;
 		letter-spacing: .1rem;
 	}
 	

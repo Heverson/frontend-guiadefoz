@@ -101,52 +101,64 @@ interface ISTitle {
 
 const STitle = styled.h1<ISTitle>`
 	display: block;
-	font-weight: 800;
+	font-weight: 700;
 	${({ size }) => {
 		if (!size) size = 'normal'
 		return {
 			xsmall: css`
 				font-size: 1.05rem;
+				line-height: 1.45;
 				@media (min-width: 800px) {
 					font-size: 1.15rem;
+					line-height: 1.425;
 				}
 				@media (min-width: 1200px) {
 					font-size: 1.25rem;
+					line-height: 1.4;
 				}
 			`,
 			small: css`
 				font-size: 1.25rem;
+				line-height: 1.4;
 				@media (min-width: 800px) {
 					font-size: 1.375rem;
+					line-height: 1.375;
 				}
 				@media (min-width: 1200px) {
 					font-size: 1.5rem;
+					line-height: 1.35;
 				}
 			`,
 			normal: css`
 				font-size: 1.5rem;
+				line-height: 1.35;
 				@media (min-width: 800px) {
 					font-size: 1.75rem;
+					line-height: 1.3;
 				}
 				@media (min-width: 1200px) {
 					font-size: 2rem;
+					line-height: 1.25;
 				}
 			`,
 			large: css`
 				font-size: 2rem;
+				line-height: 1.25;
 				@media (min-width: 800px) {
 					font-size: 2.25rem;
+					line-height: 1.2;
 				}
 				@media (min-width: 1200px) {
 					font-size: 2.5rem;
+					line-height: 1.15;
 				}
 			`,
 			xlarge: css`
 				font-size: 2.5rem;
-				line-height: 1.1;
+				line-height: 1.15;
 				@media (min-width: 800px) {
 					font-size: 3rem;
-					line-height: 1.1;
+					line-height: 1.125;
 				}
 				@media (min-width: 1200px) {
 					font-size: 3.5rem;

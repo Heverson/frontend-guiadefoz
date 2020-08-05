@@ -14,6 +14,18 @@ const cards = [
 	{
 		id: 3,
 		name: 'Geladinhos Gourmet'
+	},
+	{
+		id: 1,
+		name: 'Bete Empadinhas'
+	},
+	{
+		id: 2,
+		name: 'Bordando Cores'
+	},
+	{
+		id: 3,
+		name: 'Geladinhos Gourmet'
 	}
 ]
 
