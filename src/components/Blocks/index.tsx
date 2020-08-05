@@ -75,23 +75,82 @@ interface ISWrap {
 
 //
 
+const SImg = styled.img<ISImg>`
+	display: block;
+	width: 100%;
+	height: auto;
+	background: #eee;
+	object-fit: contain;
+	${({ isCover }) =>
+		isCover &&
+		css`
+			object-fit: cover;
+			height: 100%;
+		`}
+`
+
+interface ISImg {
+	isCover?: boolean
+}
+
+//
+
 interface ISTitle {
 	size?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
 }
 
 const STitle = styled.h1<ISTitle>`
 	display: block;
+	font-weight: 800;
 	${({ size }) => {
 		if (!size) size = 'normal'
 		return {
-			xsmall: css``,
-			small: css``,
-			normal: css``,
-			large: css``,
-			xlarge: css`
+			xsmall: css`
+				font-size: 1.05rem;
 				@media (min-width: 800px) {
+					font-size: 1.15rem;
 				}
 				@media (min-width: 1200px) {
+					font-size: 1.25rem;
+				}
+			`,
+			small: css`
+				font-size: 1.25rem;
+				@media (min-width: 800px) {
+					font-size: 1.375rem;
+				}
+				@media (min-width: 1200px) {
+					font-size: 1.5rem;
+				}
+			`,
+			normal: css`
+				font-size: 1.5rem;
+				@media (min-width: 800px) {
+					font-size: 1.75rem;
+				}
+				@media (min-width: 1200px) {
+					font-size: 2rem;
+				}
+			`,
+			large: css`
+				font-size: 2rem;
+				@media (min-width: 800px) {
+					font-size: 2.25rem;
+				}
+				@media (min-width: 1200px) {
+					font-size: 2.5rem;
+				}
+			`,
+			xlarge: css`
+				font-size: 2.5rem;
+				line-height: 1.1;
+				@media (min-width: 800px) {
+					font-size: 3rem;
+					line-height: 1.1;
+				}
+				@media (min-width: 1200px) {
+					font-size: 3.5rem;
+					line-height: 1.1;
 				}
 			`
 		}[size]
@@ -101,17 +160,31 @@ const STitle = styled.h1<ISTitle>`
 //
 
 interface ISText {
-	size?: 'small' | 'normal' | 'large'
+	size?: 'small' | 'large'
 }
 
 const SText = styled.p<ISText>`
 	display: block;
 	${({ size }) => {
-		if (!size) size = 'normal'
 		return {
-			small: css``,
-			normal: css``,
-			large: css``
+			small: css`
+				font-size: 0.8rem;
+				@media (min-width: 800px) {
+					font-size: 0.85rem;
+				}
+				@media (min-width: 1200px) {
+					font-size: 0.9rem;
+				}
+			`,
+			large: css`
+				font-size: 1.1rem;
+				@media (min-width: 800px) {
+					font-size: 1.15rem;
+				}
+				@media (min-width: 1200px) {
+					font-size: 1.2rem;
+				}
+			`
 		}[size]
 	}}
 `
@@ -123,17 +196,55 @@ interface ISLink {}
 const SLink = styled.a<ISLink>`
 	display: block;
 	text-decoration: none;
+	> svg {
+		display: inline-block;
+		vertical-align: top;
+		width: 1em;
+		height: 1em;
+		margin-right: 0.5rem;
+	}
 `
 
 //
 
-interface ISButton {}
-
 const SButton = styled.a<ISButton>`
 	display: inline-block;
 	vertical-align: top;
+	padding: 0.5rem 1em;
+	color: #fff;
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.5;
 	text-decoration: none;
+	background: #d81b60;
+	border-radius: 0.5rem;
+	transition: color 0.25s, background-color 0.25s;
+	&:hover {
+		color: #fff;
+		background-color: #c2185b;
+	}
+	&:active {
+		color: #fff;
+		background-color: #ad1457;
+	}
+	${({ size }) =>
+		size &&
+		{
+			small: css`
+				padding: 0.4rem 0.9em;
+				font-size: 0.9rem;
+			`,
+			large: css`
+				padding: .6rem 1.1rem;
+				font-size: 1.1rem;
+			`
+		}[size]}
 `
+
+interface ISButton {
+	type?: 'empty'
+	size?: 'small' | 'large'
+}
 
 //
 
@@ -145,17 +256,18 @@ const SItem = styled.li<ISItem>`
 
 //
 
-interface ISList {
+interface ISItems {
 	spacing?: 'small' | 'normal' | 'large'
 }
 
-const SList = styled.ul<ISList>`
+const SItems = styled.ul<ISItems>`
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	line-height: 1;
 	${({ spacing }) =>
 		spacing &&
 		{
@@ -185,4 +297,4 @@ const SList = styled.ul<ISList>`
 
 //
 
-export { SWrap, STitle, SText, SLink, SButton, SList, SItem }
+export { SWrap, SImg, STitle, SText, SLink, SButton, SItems, SItem }
