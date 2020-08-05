@@ -17,11 +17,59 @@ const SWrap = styled.div<ISWrap>`
 			: css`
 					display: block;
 			  `}
+	${({ isCenter }) =>
+		isCenter &&
+		css`
+			@media (min-width: 800px) {
+				width: 750px;
+				margin: 0 auto;
+			}
+			@media (min-width: 1000px) {
+				width: 900px;
+			}
+			@media (min-width: 1200px) {
+				width: 1050px;
+			}
+			@media (min-width: 1400px) {
+				width: 1200px;
+			}
+		`}
+	${({ spacing }) =>
+		spacing &&
+		{
+			small: css`
+				padding: 2em;
+				@media (min-width: 800px) {
+					padding: 3em 1.5em;
+				}
+				@media (min-width: 1200px) {
+					padding: 4em 1em;
+				}
+			`,
+			normal: css`
+				padding: 3em 2em;
+				@media (min-width: 800px) {
+					padding: 4em 1.5em;
+				}
+				@media (min-width: 1200px) {
+					padding: 5em 1em;
+				}
+			`,
+			large: css`
+				padding: 4em 2em;
+				@media (min-width: 800px) {
+					padding: 5em 1.5em;
+				}
+				@media (min-width: 1200px) {
+					padding: 6em 1em;
+				}
+			`
+		}[spacing]}
 `
 
 interface ISWrap {
 	isFlex?: boolean
-	isCentered?: boolean
+	isCenter?: boolean
 	spacing?: 'small' | 'normal' | 'large'
 }
 
@@ -89,6 +137,14 @@ const SButton = styled.a<ISButton>`
 
 //
 
+interface ISItem {}
+
+const SItem = styled.li<ISItem>`
+	display: block;
+`
+
+//
+
 interface ISList {
 	spacing?: 'small' | 'normal' | 'large'
 }
@@ -97,21 +153,34 @@ const SList = styled.ul<ISList>`
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	${() => css`
-		ul${SList}, ol${SList} {
-			padding: 0;
-			margin: 0;
-			list-style: none;
-		}
-	`}
-`
-
-//
-
-interface ISItem {}
-
-const SItem = styled.li<ISItem>`
-	display: block;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	${({ spacing }) =>
+		spacing &&
+		{
+			small: css`
+				padding: 0.25rem;
+				margin: -0.5rem;
+				> ${SItem} {
+					padding: 0.25rem;
+				}
+			`,
+			normal: css`
+				padding: 0.5rem;
+				margin: -1rem;
+				> ${SItem} {
+					padding: 0.5rem;
+				}
+			`,
+			large: css`
+				padding: 0.75rem;
+				margin: -1.5rem;
+				> ${SItem} {
+					padding: 0.75rem;
+				}
+			`
+		}[spacing]}
 `
 
 //
