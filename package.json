@@ -21,6 +21,8 @@
 	},
 	"homepage": "https://github.com/Heverson/frontend-guiadefoz#readme",
 	"dependencies": {
+		"@styled-icons/boxicons-logos": "^10.14.1",
+		"@styled-icons/boxicons-regular": "^10.14.1",
 		"next": "^9.5.1",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
