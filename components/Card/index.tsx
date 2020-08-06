@@ -1,9 +1,7 @@
-//
 import { SWrap, SImg, STitle, SLink } from 'components/Blocks'
 import styled from 'styled-components'
 import Link from 'next/link'
 
-//
 const SCard = styled(SWrap)`
 	overflow: hidden;
 	position: relative;
@@ -31,9 +29,22 @@ const SCard = styled(SWrap)`
 			}
 		}
 	}
+	@media (min-width: 800px) {
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+		transform: translate3d(0, 0, 0);
+		backface-visibility: hidden;
+		transition: box-shadow 0.25s, transform 0.25s;
+		&:hover {
+			box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.075);
+			transform: translate3d(0, -1rem, 0);
+		}
+		&:active {
+			box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.05);
+			transform: translate3d(0, -.75rem, 0);
+		}
+	}
 `
 
-//
 const Card = ({ title }: ICard) => (
 	<SCard as="article">
 		<SImg src="/imagens/cupcakes.jpg" alt="" />
@@ -52,5 +63,4 @@ interface ICard {
 }
 
 export default Card
-
 export { SCard }

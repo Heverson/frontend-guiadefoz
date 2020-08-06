@@ -186,7 +186,7 @@ const Header = () => (
 				</SLink>
 			</Link>
 			<SHMenu as="nav">
-				<SItems spacing="large">
+				<SItems spacing="normal">
 					{links.map((link, index) => (
 						<SItem key={index}>
 							<Link href={link.href} passHref>
@@ -197,7 +197,7 @@ const Header = () => (
 				</SItems>
 			</SHMenu>
 			<SHExtras>
-				<SItems spacing="small">
+				<SItems spacing="minimal">
 					<SItem>
 						<SLink href="https://github.com" rel="nofollow">
 							<Instagram size="40" title="Instagram" />

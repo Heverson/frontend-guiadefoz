@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components'
 
-// Componentes com estilos como blocos de construção
-
-// Componente com estilos para "embrulhos" (wrappers)
-// Úteis para "embrulhar" outros componentes e dar uma forma geral
-// É utilizado também geralmente como base de outros componentes mais personalizados
+interface ISWrap {
+	isFlex?: boolean
+	isCenter?: boolean
+	spacing?: 'small' | 'normal' | 'large'
+}
 
 const SWrap = styled.div<ISWrap>`
 	${({ isFlex }) =>
@@ -67,14 +67,6 @@ const SWrap = styled.div<ISWrap>`
 		}[spacing]}
 `
 
-interface ISWrap {
-	isFlex?: boolean
-	isCenter?: boolean
-	spacing?: 'small' | 'normal' | 'large'
-}
-
-//
-
 const SImg = styled.img<ISImg>`
 	display: block;
 	width: 100%;
@@ -92,8 +84,6 @@ const SImg = styled.img<ISImg>`
 interface ISImg {
 	isCover?: boolean
 }
-
-//
 
 interface ISTitle {
 	size?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
@@ -154,6 +144,7 @@ const STitle = styled.h1<ISTitle>`
 				}
 			`,
 			xlarge: css`
+				font-weight: 800;
 				font-size: 2.5rem;
 				line-height: 1.15;
 				@media (min-width: 800px) {
@@ -169,8 +160,6 @@ const STitle = styled.h1<ISTitle>`
 	}}
 `
 
-//
-
 interface ISText {
 	size?: 'small' | 'large'
 }
@@ -180,32 +169,30 @@ const SText = styled.p<ISText>`
 	${({ size }) => {
 		return {
 			small: css`
-				font-size: 0.8rem;
+				font-size: 0.85rem;
+				line-height: 1.55;
 				@media (min-width: 800px) {
-					font-size: 0.85rem;
+					font-size: 0.875rem;
 				}
 				@media (min-width: 1200px) {
 					font-size: 0.9rem;
 				}
 			`,
 			large: css`
-				font-size: 1.1rem;
+				font-size: 1.05rem;
+				line-height: 1.45;
 				@media (min-width: 800px) {
-					font-size: 1.15rem;
+					font-size: 1.075rem;
 				}
 				@media (min-width: 1200px) {
-					font-size: 1.2rem;
+					font-size: 1.1rem;
 				}
 			`
 		}[size]
 	}}
 `
 
-//
-
-interface ISLink {
-	
-}
+interface ISLink {}
 
 const SLink = styled.a<ISLink>`
 	display: block;
@@ -219,7 +206,10 @@ const SLink = styled.a<ISLink>`
 	}
 `
 
-//
+interface ISButton {
+	type?: 'empty'
+	size?: 'small' | 'large'
+}
 
 const SButton = styled.a<ISButton>`
 	display: inline-block;
@@ -249,18 +239,11 @@ const SButton = styled.a<ISButton>`
 				font-size: 0.9rem;
 			`,
 			large: css`
-				padding: .6rem 1.1rem;
+				padding: 0.6rem 1.1rem;
 				font-size: 1.1rem;
 			`
 		}[size]}
 `
-
-interface ISButton {
-	type?: 'empty'
-	size?: 'small' | 'large'
-}
-
-//
 
 interface ISItem {}
 
@@ -268,10 +251,8 @@ const SItem = styled.li<ISItem>`
 	display: block;
 `
 
-//
-
 interface ISItems {
-	spacing?: 'small' | 'normal' | 'large'
+	spacing?: 'minimal' | 'small' | 'normal' | 'large'
 }
 
 const SItems = styled.ul<ISItems>`
@@ -285,30 +266,35 @@ const SItems = styled.ul<ISItems>`
 	${({ spacing }) =>
 		spacing &&
 		{
-			small: css`
+			minimal: css`
 				padding: 0.25rem;
 				margin: -0.5rem;
 				> ${SItem} {
 					padding: 0.25rem;
 				}
 			`,
-			normal: css`
+			small: css`
 				padding: 0.5rem;
 				margin: -1rem;
 				> ${SItem} {
 					padding: 0.5rem;
 				}
 			`,
-			large: css`
+			normal: css`
 				padding: 0.75rem;
 				margin: -1.5rem;
 				> ${SItem} {
 					padding: 0.75rem;
 				}
+			`,
+			large: css`
+				padding: 1rem;
+				margin: -2rem;
+				> ${SItem} {
+					padding: 1rem;
+				}
 			`
 		}[spacing]}
 `
-
-//
 
 export { SWrap, SImg, STitle, SText, SLink, SButton, SItems, SItem }
