@@ -176,7 +176,7 @@ const Header = () => (
 				</SLink>
 			</Link>
 			<SNavigation as="nav">
-				<SItems spacing="normal">
+				<SItems isAuto spacing="normal">
 					{links.map((link, index) => (
 						<SItem key={index}>
 							<Link href={link.href} passHref>
@@ -187,7 +187,7 @@ const Header = () => (
 				</SItems>
 			</SNavigation>
 			<SExtras>
-				<SItems spacing="minimal">
+				<SItems isAuto spacing="minimal">
 					<SItem>
 						<SLink href="https://github.com" rel="nofollow">
 							<Instagram size="40" title="Instagram" />

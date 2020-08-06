@@ -1,14 +1,8 @@
-//
 import styled from 'styled-components'
-
-//
 import { SWrap, STitle, SText, SItems, SItem } from 'components/Blocks'
-
-//
 import Card, { SCard } from 'components/Card'
 
-//
-const SWelcome = styled(SWrap)`
+const SWelcome = styled.header`
 	> ${SWrap} {
 		> ${STitle} {
 			margin-bottom: 2rem;
@@ -22,7 +16,7 @@ const SWelcome = styled(SWrap)`
 			> ${SItem} {
 				width: 100%;
 				> ${SCard} {
-					height: 100%;
+					
 				}
 			}
 		}
@@ -47,13 +41,6 @@ const SWelcome = styled(SWrap)`
 	}
 `
 
-//
-interface IWelcome {
-	title: string
-	description: string
-	cards: any[]
-}
-
 const Welcome = ({ title, description, cards }: IWelcome) => (
 	<SWelcome>
 		<SWrap isCenter spacing="large">
@@ -70,5 +57,10 @@ const Welcome = ({ title, description, cards }: IWelcome) => (
 	</SWelcome>
 )
 
-//
+interface IWelcome {
+	title: string
+	description: string
+	cards: any[]
+}
+
 export default Welcome

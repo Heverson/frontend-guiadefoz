@@ -234,27 +234,28 @@ const GlobalStyle = createGlobalStyle`
 	}
 	
 	b, strong {
+		color: #222;
 		font-weight: 600;
 	}
 	
 	a {
 		
-		color: #C51162;
+		color: #0091EA;
 		transition: color .25s;
 		
 		&:hover {
-			color: #F50057;
+			color: #00B0FF;
 		}
 		
 		&:active {
-			color: #FF4081;
+			color: #40C4FF;
 		}
 		
 	}
 	
 	h1, h2, h3, h4, h5 {
 		margin: 0;
-		color: #1976D2;
+		color: #222;
 		letter-spacing: .1rem;
 	}
 	

@@ -39,6 +39,12 @@ const SWrap = styled.div<ISWrap>`
 		{
 			small: css`
 				padding: 2em;
+				@media (min-width: 400px) {
+					padding: 2em 2.5em;
+				}
+				@media (min-width: 600px) {
+					padding: 2em 3em;
+				}
 				@media (min-width: 800px) {
 					padding: 3em 1.5em;
 				}
@@ -48,6 +54,12 @@ const SWrap = styled.div<ISWrap>`
 			`,
 			normal: css`
 				padding: 3em 2em;
+				@media (min-width: 400px) {
+					padding: 3em 2.5em;
+				}
+				@media (min-width: 600px) {
+					padding: 3em;
+				}
 				@media (min-width: 800px) {
 					padding: 4em 1.5em;
 				}
@@ -57,6 +69,12 @@ const SWrap = styled.div<ISWrap>`
 			`,
 			large: css`
 				padding: 4em 2em;
+				@media (min-width: 400px) {
+					padding: 4em 2.5em;
+				}
+				@media (min-width: 600px) {
+					padding: 4em 3em;
+				}
 				@media (min-width: 800px) {
 					padding: 5em 1.5em;
 				}
@@ -91,6 +109,7 @@ interface ISTitle {
 
 const STitle = styled.h1<ISTitle>`
 	display: block;
+	color: #1e88e5;
 	font-weight: 700;
 	${({ size }) => {
 		if (!size) size = 'normal'
@@ -207,8 +226,9 @@ const SLink = styled.a<ISLink>`
 `
 
 interface ISButton {
-	type?: 'empty'
 	size?: 'small' | 'large'
+	type?: 'empty'
+	hasIcon?: boolean
 }
 
 const SButton = styled.a<ISButton>`
@@ -220,17 +240,23 @@ const SButton = styled.a<ISButton>`
 	font-size: 1rem;
 	line-height: 1.5;
 	text-decoration: none;
-	background: #d81b60;
+	background: #0288D1;
 	border-radius: 0.5rem;
+	cursor: pointer;
 	transition: color 0.25s, background-color 0.25s;
 	&:hover {
 		color: #fff;
-		background-color: #c2185b;
+		background-color: #0277BD;
 	}
 	&:active {
 		color: #fff;
-		background-color: #ad1457;
+		background-color: #01579B;
 	}
+	${({ hasIcon }) => hasIcon && css`
+		overflow: hidden;
+		white-space: nowrap;
+		
+	`}
 	${({ size }) =>
 		size &&
 		{
@@ -243,6 +269,19 @@ const SButton = styled.a<ISButton>`
 				font-size: 1.1rem;
 			`
 		}[size]}
+	${({ type }) =>
+		type &&
+		{
+			empty: css`
+				background: transparent;
+				&:hover {
+					background-color: transparent;
+				}
+				&:active {
+					background-color: transparent;
+				}
+			`
+		}[type]}
 `
 
 interface ISItem {}
@@ -253,6 +292,7 @@ const SItem = styled.li<ISItem>`
 `
 
 interface ISItems {
+	isAuto?: boolean
 	spacing?: 'minimal' | 'small' | 'normal' | 'large'
 }
 
@@ -264,6 +304,13 @@ const SItems = styled.ul<ISItems>`
 	margin: 0;
 	list-style: none;
 	line-height: 1;
+	${({ isAuto }) =>
+		isAuto &&
+		css`
+			> ${SItem} {
+				width: auto;
+			}
+		`}
 	${({ spacing }) =>
 		spacing &&
 		{
