@@ -16,13 +16,13 @@ import {
 
 import { HomeSmile } from '@styled-icons/boxicons-regular'
 
-// 
+//
 const SHMenu = styled(SWrap)`
 	> ${SItems} {
 		> ${SItem} {
 			> ${SLink} {
-				padding: .5rem;
-				margin: -.5rem;
+				padding: 0.5rem;
+				margin: -0.5rem;
 			}
 			&:first-child {
 				display: none;
@@ -58,18 +58,18 @@ const SHMenu = styled(SWrap)`
 	}
 `
 
-// 
+//
 const SHExtras = styled(SWrap)`
-	width: calc(100% + .25rem);
+	width: calc(100% + 0.25rem);
 	margin-top: 1.25rem;
-	margin-left: -.25rem;
+	margin-left: -0.25rem;
 	> ${SItems} {
 		flex-wrap: nowrap;
 		> ${SItem} {
 			> ${SLink} {
 				overflow: hidden;
 				width: 2rem;
-				padding: .25rem;
+				padding: 0.25rem;
 				white-space: nowrap;
 				> svg {
 					width: 1.5rem;
@@ -104,7 +104,7 @@ const SHeader = styled(SWrap)`
 			color: #444;
 		}
 		&:active {
-			color: #FF4081;
+			color: #ff4081;
 		}
 	}
 	> ${SWrap} {
@@ -127,7 +127,6 @@ const SHeader = styled(SWrap)`
 				margin-right: auto;
 			}
 			> ${SHExtras} {
-				
 			}
 		}
 	}
@@ -137,10 +136,8 @@ const SHeader = styled(SWrap)`
 				font-size: 2rem;
 			}
 			> ${SHMenu} {
-				
 			}
 			> ${SHExtras} {
-				
 			}
 		}
 	}
@@ -149,7 +146,7 @@ const SHeader = styled(SWrap)`
 			> ${SLink} {
 				width: auto;
 				margin-right: auto;
-				margin-bottom: -.5rem;
+				margin-bottom: -0.5rem;
 			}
 			> ${SHMenu} {
 				margin-right: 1.75rem;
@@ -180,7 +177,7 @@ const links = [
 
 //
 const Header = () => (
-	<SHeader as="header">
+	<SHeader as="header" >
 		<SWrap isFlex isCenter spacing="small">
 			<Link href="/" passHref>
 				<SLink>

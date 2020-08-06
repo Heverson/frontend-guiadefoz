@@ -203,7 +203,9 @@ const SText = styled.p<ISText>`
 
 //
 
-interface ISLink {}
+interface ISLink {
+	
+}
 
 const SLink = styled.a<ISLink>`
 	display: block;
