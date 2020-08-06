@@ -1,20 +1,20 @@
 import styled from 'styled-components'
-import { SWrap, SImg, STitle } from 'components/Blocks'
+import { SWrap, SImg, SText } from 'components/Blocks'
 
 const SMCard = styled(SWrap)`
 	position: relative;
 	> ${SImg} {
 		
 	}
-	> ${STitle} {
-		
+	> ${SText} {
+		font-weight: 700;
 	}
 `
 
 const MCard = ({ tag, title }: IMCard) => (
 	<SMCard as="article">
 		<SImg src="/images/cupcakes.jpg" alt="" />
-		<STitle as={tag}>{title}</STitle>
+		<SText as={tag}>{title}</SText>
 	</SMCard>
 )
 

@@ -7,6 +7,7 @@ const SCard = styled(SWrap)`
 	position: relative;
 	padding: 1rem;
 	background: #fff;
+	border-bottom: 1px solid #eee;
 	border-radius: 0.5rem;
 	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 	> ${SImg} {
@@ -35,12 +36,12 @@ const SCard = styled(SWrap)`
 		backface-visibility: hidden;
 		transition: box-shadow 0.25s, transform 0.25s;
 		&:hover {
-			box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.075);
-			transform: translate3d(0, -1rem, 0);
+			box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
+			transform: translate3d(0, -.5rem, 0);
 		}
 		&:active {
-			box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.05);
-			transform: translate3d(0, -.75rem, 0);
+			box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.075);
+			transform: translate3d(0, -.375rem, 0);
 		}
 	}
 `

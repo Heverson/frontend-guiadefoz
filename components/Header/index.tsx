@@ -1,23 +1,14 @@
-//
-import styled from 'styled-components'
-
-//
-import { SWrap, SLink, SButton, SItems, SItem } from 'components/Blocks'
-
-//
 import Link from 'next/link'
-
-//
+import styled from 'styled-components'
+import { SWrap, SLink, SButton, SItems, SItem } from 'components/Blocks'
+import { HomeSmile } from '@styled-icons/boxicons-regular'
 import {
 	Instagram,
 	FacebookSquare,
 	Discord
 } from '@styled-icons/boxicons-logos'
 
-import { HomeSmile } from '@styled-icons/boxicons-regular'
-
-//
-const SHMenu = styled(SWrap)`
+const SNavigation = styled.nav`
 	> ${SItems} {
 		> ${SItem} {
 			> ${SLink} {
@@ -58,8 +49,7 @@ const SHMenu = styled(SWrap)`
 	}
 `
 
-//
-const SHExtras = styled(SWrap)`
+const SExtras = styled.div`
 	width: calc(100% + 0.25rem);
 	margin-top: 1.25rem;
 	margin-left: -0.25rem;
@@ -94,8 +84,10 @@ const SHExtras = styled(SWrap)`
 	}
 `
 
-//
-const SHeader = styled(SWrap)`
+const SHeader = styled.header`
+	overflow: hidden;
+	position: relative;
+	z-index: 3;
 	background: #eee;
 	${SLink} {
 		font-weight: 600;
@@ -123,10 +115,10 @@ const SHeader = styled(SWrap)`
 			> ${SLink} {
 				font-size: 1.75rem;
 			}
-			> ${SHMenu} {
+			> ${SNavigation} {
 				margin-right: auto;
 			}
-			> ${SHExtras} {
+			> ${SExtras} {
 			}
 		}
 	}
@@ -135,9 +127,9 @@ const SHeader = styled(SWrap)`
 			> ${SLink} {
 				font-size: 2rem;
 			}
-			> ${SHMenu} {
+			> ${SNavigation} {
 			}
-			> ${SHExtras} {
+			> ${SExtras} {
 			}
 		}
 	}
@@ -148,14 +140,13 @@ const SHeader = styled(SWrap)`
 				margin-right: auto;
 				margin-bottom: -0.5rem;
 			}
-			> ${SHMenu} {
+			> ${SNavigation} {
 				margin-right: 1.75rem;
 			}
 		}
 	}
 `
 
-//
 const links = [
 	{
 		href: '/',
@@ -175,9 +166,8 @@ const links = [
 	}
 ]
 
-//
 const Header = () => (
-	<SHeader as="header" >
+	<SHeader>
 		<SWrap isFlex isCenter spacing="small">
 			<Link href="/" passHref>
 				<SLink>
@@ -185,7 +175,7 @@ const Header = () => (
 					Guia de Foz
 				</SLink>
 			</Link>
-			<SHMenu as="nav">
+			<SNavigation as="nav">
 				<SItems spacing="normal">
 					{links.map((link, index) => (
 						<SItem key={index}>
@@ -195,8 +185,8 @@ const Header = () => (
 						</SItem>
 					))}
 				</SItems>
-			</SHMenu>
-			<SHExtras>
+			</SNavigation>
+			<SExtras>
 				<SItems spacing="minimal">
 					<SItem>
 						<SLink href="https://github.com" rel="nofollow">
@@ -222,10 +212,9 @@ const Header = () => (
 						</Link>
 					</SItem>
 				</SItems>
-			</SHExtras>
+			</SExtras>
 		</SWrap>
 	</SHeader>
 )
 
-//
 export default Header

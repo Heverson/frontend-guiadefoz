@@ -249,6 +249,7 @@ interface ISItem {}
 
 const SItem = styled.li<ISItem>`
 	display: block;
+	width: 100%;
 `
 
 interface ISItems {

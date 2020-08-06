@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import styled from 'styled-components'
-import { SWrap, STitle, SText, SItems, SItem } from 'components/Blocks'
+import { FacebookSquare } from '@styled-icons/boxicons-logos'
+import { SWrap, SItems, SItem, STitle, SText, SLink } from 'components/Blocks'
 import Form, { SForm } from 'components/Form'
 import MCard, { SMCard } from 'components/MCard'
 
@@ -15,20 +17,18 @@ const locals = [
 	}
 ]
 
-const SSection = styled(SWrap)`
+const SSection = styled.section`
 	> ${STitle} {
 		margin-bottom: 1rem;
-		color: #fff;
 	}
 	@media (min-width: 800px) {
-		
 	}
 `
 
-const SFooter = styled(SWrap)`
+const SFooter = styled.footer`
 	position: relative;
-	color: #B0BEC5;
-	text-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+	color: #b0bec5;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 	background: #263238;
 	> ${SWrap} {
 		align-items: flex-start;
@@ -54,7 +54,8 @@ const SFooter = styled(SWrap)`
 		> ${SWrap} {
 			justify-content: space-between;
 			> ${SSection} {
-				&:nth-child(1), &:nth-child(2) {
+				&:nth-child(1),
+				&:nth-child(2) {
 					width: calc(50% - 1rem);
 				}
 			}
@@ -63,7 +64,9 @@ const SFooter = styled(SWrap)`
 	@media (min-width: 1000px) {
 		> ${SWrap} {
 			> ${SSection} {
-				&:nth-child(1), &:nth-child(2), &:nth-child(3) {
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3) {
 					width: calc(33.33333% - 1.33333rem);
 					margin-bottom: 0;
 				}
@@ -82,37 +85,74 @@ const SFooter = styled(SWrap)`
 			}
 		}
 	}
+	${STitle} {
+		color: #fff;
+	}
 `
 
 const Footer = () => (
-	<SFooter as="footer">
+	<SFooter>
 		<SWrap isFlex isCenter spacing="small">
-			<SSection as="section">
-				<STitle as="h4" size="xsmall">Guia de Foz</STitle>
+			<SSection>
+				<STitle as="h4" size="xsmall">
+					Guia de Foz
+				</STitle>
 				<SText size="small">
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse nihil
 					illum eaque ullam labore praesentium. Expedita explicabo assumenda.
 				</SText>
+				<SItems spacing="minimal">
+					<SItem>
+						<SLink href="#">
+							<FacebookSquare />
+							Facebook
+						</SLink>
+					</SItem>
+				</SItems>
 			</SSection>
-			<SSection as="section">
-				<STitle as="h4" size="xsmall">Informações</STitle>
-				<SText size="small">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse nihil
-					illum eaque ullam labore praesentium. Expedita explicabo assumenda.
-				</SText>
+			<SSection>
+				<STitle as="h4" size="xsmall">
+					Informações
+				</STitle>
+				<SItems spacing="small">
+					<SItem>
+						<Link href="/" passHref>
+							<SLink>Sobre nós</SLink>
+						</Link>
+					</SItem>
+					<SItem>
+						<Link href="/" passHref>
+							<SLink>Sobre nós</SLink>
+						</Link>
+					</SItem>
+					<SItem>
+						<Link href="/" passHref>
+							<SLink>Sobre nós</SLink>
+						</Link>
+					</SItem>
+					<SItem>
+						<Link href="/" passHref>
+							<SLink>Sobre nós</SLink>
+						</Link>
+					</SItem>
+				</SItems>
 			</SSection>
-			<SSection as="section">
-				<STitle as="h4" size="xsmall">Últimas empresas</STitle>
+			<SSection>
+				<STitle as="h4" size="xsmall">
+					Últimas empresas
+				</STitle>
 				<SItems spacing="small">
 					{locals.map((local, index) => (
 						<SItem key={index}>
-							<MCard />
+							<MCard tag="h5" title={local.name} />
 						</SItem>
 					))}
 				</SItems>
 			</SSection>
-			<SSection as="section">
-				<STitle as="h4" size="xsmall">Boletim de notícias</STitle>
+			<SSection>
+				<STitle as="h4" size="xsmall">
+					Boletim de notícias
+				</STitle>
 				<Form />
 			</SSection>
 		</SWrap>
