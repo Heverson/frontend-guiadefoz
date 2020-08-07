@@ -1,11 +1,5 @@
 import styled, { css } from 'styled-components'
 
-interface ISWrap {
-	isFlex?: boolean
-	isCenter?: boolean
-	spacing?: 'small' | 'normal' | 'large'
-}
-
 const SWrap = styled.div<ISWrap>`
 	${({ isFlex }) =>
 		isFlex
@@ -85,6 +79,12 @@ const SWrap = styled.div<ISWrap>`
 		}[spacing]}
 `
 
+interface ISWrap {
+	isFlex?: boolean
+	isCenter?: boolean
+	spacing?: 'small' | 'normal' | 'large'
+}
+
 const SImg = styled.img<ISImg>`
 	display: block;
 	width: 100%;
@@ -101,10 +101,6 @@ const SImg = styled.img<ISImg>`
 
 interface ISImg {
 	isCover?: boolean
-}
-
-interface ISTitle {
-	size?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
 }
 
 const STitle = styled.h1<ISTitle>`
@@ -179,8 +175,8 @@ const STitle = styled.h1<ISTitle>`
 	}}
 `
 
-interface ISText {
-	size?: 'small' | 'large'
+interface ISTitle {
+	size?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
 }
 
 const SText = styled.p<ISText>`
@@ -211,7 +207,10 @@ const SText = styled.p<ISText>`
 	}}
 `
 
-interface ISLink {}
+interface ISText {
+	for?: string
+	size?: 'small' | 'large'
+}
 
 const SLink = styled.a<ISLink>`
 	display: block;
@@ -225,14 +224,16 @@ const SLink = styled.a<ISLink>`
 	}
 `
 
+interface ISLink {}
+
 const SField = styled.input<ISField>`
 	display: block;
 	width: 100%;
+	border: none;
+	outline: none;
 `
 
-interface ISField {
-	
-}
+interface ISField {}
 
 const SButton = styled.a<ISButton>`
 	display: inline-block;
@@ -319,28 +320,35 @@ const SItems = styled.ul<ISItems>`
 	${({ spacing }) =>
 		spacing &&
 		{
-			minimal: css`
+			xsmall: css`
+				padding: 0.125rem;
+				margin: -0.25rem;
+				> ${SItem} {
+					padding: 0.125rem;
+				}
+			`,
+			small: css`
 				padding: 0.25rem;
 				margin: -0.5rem;
 				> ${SItem} {
 					padding: 0.25rem;
 				}
 			`,
-			small: css`
+			normal: css`
 				padding: 0.5rem;
 				margin: -1rem;
 				> ${SItem} {
 					padding: 0.5rem;
 				}
 			`,
-			normal: css`
+			large: css`
 				padding: 0.75rem;
 				margin: -1.5rem;
 				> ${SItem} {
 					padding: 0.75rem;
 				}
 			`,
-			large: css`
+			xlarge: css`
 				padding: 1rem;
 				margin: -2rem;
 				> ${SItem} {
@@ -352,7 +360,17 @@ const SItems = styled.ul<ISItems>`
 
 interface ISItems {
 	isAuto?: boolean
-	spacing?: 'minimal' | 'small' | 'normal' | 'large'
+	spacing?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
 }
 
-export { SWrap, SImg, STitle, SText, SLink, SButton, SItems, SItem }
+export {
+	SWrap,
+	SItems,
+	SItem,
+	SImg,
+	STitle,
+	SText,
+	SLink,
+	SButton,
+	SField
+}

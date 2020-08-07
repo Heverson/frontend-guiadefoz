@@ -1,14 +1,23 @@
 import styled from 'styled-components'
-import { SWrap, STitle, SText, SItems, SItem } from 'components/Blocks'
+import {
+	SWrap,
+	SItems,
+	SItem,
+	STitle,
+	SText,
+	SField,
+	SButton
+} from 'components/Blocks'
 import Card, { SCard } from 'components/Card'
 
+const SForm = styled.form``
 const SWelcome = styled.header`
 	> ${SWrap} {
 		> ${STitle} {
 			margin-bottom: 2rem;
 		}
 		> ${SText} {
-			margin-bottom: 3rem;
+			margin-bottom: 4rem;
 			color: #666;
 		}
 		> ${SItems} {
@@ -16,7 +25,6 @@ const SWelcome = styled.header`
 			> ${SItem} {
 				width: 100%;
 				> ${SCard} {
-					
 				}
 			}
 		}
@@ -46,7 +54,28 @@ const Welcome = ({ title, description, cards }: IWelcome) => (
 		<SWrap isCenter spacing="large">
 			<STitle size="xlarge">{title}</STitle>
 			<SText size="large">{description}</SText>
-			<SItems spacing="large">
+			<SForm>
+				<SItems spacing="normal">
+					<SItem>
+						<SText as="label" for="this">Palavra-chave</SText>
+						<SField type="text" required />
+					</SItem>
+					<SItem>
+						<SText as="label" for="this">Categoria</SText>
+						<SField type="text" />
+					</SItem>
+					<SItem>
+						<SText as="label" for="this">Regiao e bairro</SText>
+						<SField type="text" />
+					</SItem>
+					<SItem>
+						<SButton as="button" type="submit">
+							Buscar
+						</SButton>
+					</SItem>
+				</SItems>
+			</SForm>
+			<SItems spacing="xlarge">
 				{cards.map(card => (
 					<SItem key={card.id}>
 						<Card title={card.name} rating={5} region="CE" />
