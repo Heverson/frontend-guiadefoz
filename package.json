@@ -24,6 +24,7 @@
 		"@styled-icons/boxicons-logos": "^10.14.1",
 		"@styled-icons/boxicons-regular": "^10.14.1",
 		"@styled-icons/boxicons-solid": "^10.14.1",
+		"formik": "^2.1.5",
 		"next": "^9.5.1",
 		"next-seo": "^4.7.3",
 		"react": "^16.13.1",
