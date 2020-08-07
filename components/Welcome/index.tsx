@@ -5,12 +5,19 @@ import {
 	SItem,
 	STitle,
 	SText,
+	SLabel,
 	SField,
 	SButton
 } from 'components/Blocks'
 import Card, { SCard } from 'components/Card'
 
-const SForm = styled.form``
+const SForm = styled.form`
+	> ${SItems} {
+		> ${SItem} {
+			width: 25%;
+		}
+	}
+`
 const SWelcome = styled.header`
 	> ${SWrap} {
 		> ${STitle} {
@@ -57,16 +64,22 @@ const Welcome = ({ title, description, cards }: IWelcome) => (
 			<SForm>
 				<SItems spacing="normal">
 					<SItem>
-						<SText as="label" for="this">Palavra-chave</SText>
-						<SField type="text" required />
+						<SLabel htmlFor="termo">
+							Palavra-chave
+						</SLabel>
+						<SField id="termo" name="termo" type="text" required />
 					</SItem>
 					<SItem>
-						<SText as="label" for="this">Categoria</SText>
-						<SField type="text" />
+						<SLabel htmlFor="categoria">
+							Categoria
+						</SLabel>
+						<SField id="categoria" name="categoria" type="text" />
 					</SItem>
 					<SItem>
-						<SText as="label" for="this">Regiao e bairro</SText>
-						<SField type="text" />
+						<SLabel htmlFor="regiao">
+							Regiao e bairro
+						</SLabel>
+						<SField id="regiao" name="regiao" type="text" />
 					</SItem>
 					<SItem>
 						<SButton as="button" type="submit">

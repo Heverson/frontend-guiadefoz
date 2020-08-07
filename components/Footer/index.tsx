@@ -124,7 +124,7 @@ const Footer = () => (
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse nihil
 					illum eaque ullam labore praesentium. Expedita explicabo assumenda.
 				</SText>
-				<SItems isAuto spacing="minimal">
+				<SItems isAuto spacing="xsmall">
 					<SItem>
 						<SButton href="#" target="_blank" type="empty" hasIcon>
 							<SFacebook />
@@ -149,7 +149,7 @@ const Footer = () => (
 				<STitle as="h4" size="xsmall">
 					Informações
 				</STitle>
-				<SItems spacing="small">
+				<SItems spacing="normal">
 					<SItem>
 						<Link href="/" passHref>
 							<SLink>Sobre nós</SLink>

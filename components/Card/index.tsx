@@ -1,4 +1,5 @@
-import { SWrap, SImg, STitle, SLink } from 'components/Blocks'
+import { SWrap, SImg, STitle, SText, SLink } from 'components/Blocks'
+import Stars, { SStars } from 'components/Stars'
 import styled from 'styled-components'
 import Link from 'next/link'
 
@@ -37,11 +38,11 @@ const SCard = styled(SWrap)`
 		transition: box-shadow 0.25s, transform 0.25s;
 		&:hover {
 			box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
-			transform: translate3d(0, -.5rem, 0);
+			transform: translate3d(0, -0.5rem, 0);
 		}
 		&:active {
 			box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.075);
-			transform: translate3d(0, -.375rem, 0);
+			transform: translate3d(0, -0.375rem, 0);
 		}
 	}
 `
@@ -54,6 +55,11 @@ const Card = ({ title }: ICard) => (
 				<SLink>{title}</SLink>
 			</Link>
 		</STitle>
+		<Stars />
+		<SWrap isFlex>
+			<SText size="small">Vila C</SText>
+			<SText size="small">Preço médio</SText>
+		</SWrap>
 	</SCard>
 )
 

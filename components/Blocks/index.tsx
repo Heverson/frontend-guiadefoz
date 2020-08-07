@@ -107,6 +107,7 @@ const STitle = styled.h1<ISTitle>`
 	display: block;
 	color: #1e88e5;
 	font-weight: 700;
+	letter-spacing: 0.1rem;
 	${({ size }) => {
 		if (!size) size = 'normal'
 		return {
@@ -212,6 +213,17 @@ interface ISText {
 	size?: 'small' | 'large'
 }
 
+const SLabel = styled.label<ISLabel>`
+	display: block;
+	width: 100%;
+	font-weight: 600;
+	cursor: pointer;
+`
+
+interface ISLabel {
+	
+}
+
 const SLink = styled.a<ISLink>`
 	display: block;
 	text-decoration: none;
@@ -229,8 +241,11 @@ interface ISLink {}
 const SField = styled.input<ISField>`
 	display: block;
 	width: 100%;
+	padding: 0.5rem 1rem;
+	line-height: 1.5;
 	border: none;
 	outline: none;
+	border-radius: 0.25rem;
 `
 
 interface ISField {}
@@ -244,8 +259,9 @@ const SButton = styled.a<ISButton>`
 	font-size: 1rem;
 	line-height: 1.5;
 	text-decoration: none;
+	letter-spacing: .1rem;
 	background: #0288D1;
-	border-radius: 0.5rem;
+	border-radius: 0.25rem;
 	cursor: pointer;
 	transition: color 0.25s, background-color 0.25s;
 	&:hover {
@@ -291,7 +307,7 @@ const SButton = styled.a<ISButton>`
 
 interface ISButton {
 	size?: 'small' | 'large'
-	type?: 'empty'
+	type?: 'empty' | 'submit'
 	hasIcon?: boolean
 }
 
@@ -363,14 +379,4 @@ interface ISItems {
 	spacing?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
 }
 
-export {
-	SWrap,
-	SItems,
-	SItem,
-	SImg,
-	STitle,
-	SText,
-	SLink,
-	SButton,
-	SField
-}
+export { SWrap, SItems, SItem, SImg, STitle, SText, SLink, SLabel, SField, SButton }
