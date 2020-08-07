@@ -225,10 +225,13 @@ const SLink = styled.a<ISLink>`
 	}
 `
 
-interface ISButton {
-	size?: 'small' | 'large'
-	type?: 'empty'
-	hasIcon?: boolean
+const SField = styled.input<ISField>`
+	display: block;
+	width: 100%;
+`
+
+interface ISField {
+	
 }
 
 const SButton = styled.a<ISButton>`
@@ -252,11 +255,12 @@ const SButton = styled.a<ISButton>`
 		color: #fff;
 		background-color: #01579B;
 	}
-	${({ hasIcon }) => hasIcon && css`
-		overflow: hidden;
-		white-space: nowrap;
-		
-	`}
+	${({ hasIcon }) =>
+		hasIcon &&
+		css`
+			overflow: hidden;
+			white-space: nowrap;
+		`}
 	${({ size }) =>
 		size &&
 		{
@@ -284,17 +288,18 @@ const SButton = styled.a<ISButton>`
 		}[type]}
 `
 
-interface ISItem {}
+interface ISButton {
+	size?: 'small' | 'large'
+	type?: 'empty'
+	hasIcon?: boolean
+}
 
 const SItem = styled.li<ISItem>`
 	display: block;
 	width: 100%;
 `
 
-interface ISItems {
-	isAuto?: boolean
-	spacing?: 'minimal' | 'small' | 'normal' | 'large'
-}
+interface ISItem {}
 
 const SItems = styled.ul<ISItems>`
 	display: flex;
@@ -344,5 +349,10 @@ const SItems = styled.ul<ISItems>`
 			`
 		}[spacing]}
 `
+
+interface ISItems {
+	isAuto?: boolean
+	spacing?: 'minimal' | 'small' | 'normal' | 'large'
+}
 
 export { SWrap, SImg, STitle, SText, SLink, SButton, SItems, SItem }
