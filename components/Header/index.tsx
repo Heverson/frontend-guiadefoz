@@ -48,7 +48,6 @@ const SNavigation = styled.nav`
 		}
 	}
 `
-
 const SExtras = styled.div`
 	width: calc(100% + 0.25rem);
 	margin-top: 1.25rem;
@@ -83,7 +82,6 @@ const SExtras = styled.div`
 		}
 	}
 `
-
 const SHeader = styled.header`
 	overflow: hidden;
 	position: relative;
@@ -176,7 +174,7 @@ const Header = () => (
 				</SLink>
 			</Link>
 			<SNavigation as="nav">
-				<SItems isAuto spacing="normal">
+				<SItems isAuto spacing="large">
 					{links.map((link, index) => (
 						<SItem key={index}>
 							<Link href={link.href} passHref>
@@ -187,7 +185,7 @@ const Header = () => (
 				</SItems>
 			</SNavigation>
 			<SExtras>
-				<SItems isAuto spacing="minimal">
+				<SItems isAuto spacing="small">
 					<SItem>
 						<SLink href="https://github.com" rel="nofollow">
 							<Instagram size="40" title="Instagram" />
