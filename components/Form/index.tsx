@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { SItems, SItem, SButton } from 'components/Blocks'
-import formik from 'formik'
+//import formik from 'formik'
 
 const SLabel = styled.label`
 	display: block;
@@ -38,24 +38,17 @@ const FormItem = () => {
 
 interface IFormItem {}
 
-const Form = ({ fields }: IForm ) => {
+const Form = ({ fields }: IForm) => {
 	return (
 		<SForm>
-			<SItems spacing="small">
-				{console.log(typeof fields)}
-				{/* {fields.map((field) => (
-					<SItem key={field.id}>
-						<FormItem />
-					</SItem>
-				))} */}
-				<SButton type="submit">Enviar</SButton>
-			</SItems>
+			{console.log(fields)}
+			<SButton type="submit">Enviar</SButton>
 		</SForm>
 	)
 }
 
 interface IForm {
-	fields: object[]
+	fields: any[]
 }
 
 export default Form
