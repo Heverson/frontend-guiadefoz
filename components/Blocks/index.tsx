@@ -213,17 +213,6 @@ interface ISText {
 	size?: 'small' | 'large'
 }
 
-const SLabel = styled.label<ISLabel>`
-	display: block;
-	width: 100%;
-	font-weight: 600;
-	cursor: pointer;
-`
-
-interface ISLabel {
-	
-}
-
 const SLink = styled.a<ISLink>`
 	display: block;
 	text-decoration: none;
@@ -237,18 +226,6 @@ const SLink = styled.a<ISLink>`
 `
 
 interface ISLink {}
-
-const SField = styled.input<ISField>`
-	display: block;
-	width: 100%;
-	padding: 0.5rem 1rem;
-	line-height: 1.5;
-	border: none;
-	outline: none;
-	border-radius: 0.25rem;
-`
-
-interface ISField {}
 
 const SButton = styled.a<ISButton>`
 	display: inline-block;
@@ -379,4 +356,4 @@ interface ISItems {
 	spacing?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
 }
 
-export { SWrap, SItems, SItem, SImg, STitle, SText, SLink, SLabel, SField, SButton }
+export { SWrap, SItems, SItem, SImg, STitle, SText, SLink, SButton }

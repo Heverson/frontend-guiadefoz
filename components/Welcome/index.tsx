@@ -1,24 +1,23 @@
 import styled from 'styled-components'
-import {
-	SWrap,
-	SItems,
-	SItem,
-	STitle,
-	SText,
-	SLabel,
-	SField,
-	SButton
-} from 'components/Blocks'
+import { SWrap, SItems, SItem, STitle, SText } from 'components/Blocks'
+import Form, { SForm } from 'components/Form'
 import Card, { SCard } from 'components/Card'
-import { useFormik } from 'formik'
 
-const SForm = styled.form`
-	> ${SItems} {
-		> ${SItem} {
-			width: 25%;
-		}
+const fields = [
+	{
+		name: 'nome',
+		label: 'Nome'
+	},
+	{
+		name: 'categoria',
+		label: 'Categoria'
+	},
+	{
+		name: 'region',
+		label: 'Região'
 	}
-`
+]
+
 const SWelcome = styled.header`
 	> ${SWrap} {
 		> ${STitle} {
@@ -27,6 +26,9 @@ const SWelcome = styled.header`
 		> ${SText} {
 			margin-bottom: 4rem;
 			color: #666;
+		}
+		> ${SForm} {
+			margin-bottom: 4rem;
 		}
 		> ${SItems} {
 			align-items: stretch;
@@ -46,8 +48,25 @@ const SWelcome = styled.header`
 			}
 		}
 	}
+	@media (min-width: 800px) {
+		> ${SWrap} {
+			> ${STitle}, > ${SText} {
+				margin-right: 250px;
+			}
+		}
+	}
+	@media (min-width: 1000px) {
+		> ${SWrap} {
+			> ${STitle}, > ${SText} {
+				margin-right: 300px;
+			}
+		}
+	}
 	@media (min-width: 1200px) {
 		> ${SWrap} {
+			> ${STitle}, > ${SText} {
+				margin-right: 350px;
+			}
 			> ${SItems} {
 				> ${SItem} {
 					width: 33.33333%;
@@ -55,52 +74,22 @@ const SWelcome = styled.header`
 			}
 		}
 	}
+	@media (min-width: 1400px) {
+		> ${SWrap} {
+			> ${STitle}, > ${SText} {
+				margin-right: 400px;
+			}
+		}
+	}
 `
 
 const Welcome = ({ title, description, cards }: IWelcome) => {
-	const formik = useFormik({
-		initialValues: {
-			termo: '',
-			categoria: '',
-			regiao: ''
-		},
-		onSubmit: values => {
-			console.log(JSON.stringify(values, null, 2))
-		}
-	})
 	return (
 		<SWelcome>
 			<SWrap isCenter spacing="large">
 				<STitle size="xlarge">{title}</STitle>
 				<SText size="large">{description}</SText>
-				<SForm onSubmit={formik.handleSubmit}>
-					<SItems spacing="normal">
-						<SItem>
-							<SLabel htmlFor="termo">Palavra-chave</SLabel>
-							<SField
-								id="termo"
-								name="termo"
-								type="text"
-								value={formik.values.termo}
-								onChange={formik.handleChange}
-								required
-							/>
-						</SItem>
-						<SItem>
-							<SLabel htmlFor="categoria">Categoria</SLabel>
-							<SField id="categoria" name="categoria" type="text" value={formik.values.termo} onChange={formik.handleChange} />
-						</SItem>
-						<SItem>
-							<SLabel htmlFor="regiao">Regiao e bairro</SLabel>
-							<SField id="regiao" name="regiao" type="text" />
-						</SItem>
-						<SItem>
-							<SButton as="button" type="submit">
-								Buscar
-							</SButton>
-						</SItem>
-					</SItems>
-				</SForm>
+				<Form fields={fields} />
 				<SItems spacing="xlarge">
 					{cards.map(card => (
 						<SItem key={card.id}>
