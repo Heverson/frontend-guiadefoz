@@ -306,7 +306,7 @@ const SFlex = styled.ul<ISFlex>`
 	${({ isAuto }) =>
 		isAuto &&
 		css`
-			> ${SItem} {
+			> ${SFlexItem} {
 				width: auto;
 			}
 		`}
@@ -316,35 +316,35 @@ const SFlex = styled.ul<ISFlex>`
 			xsmall: css`
 				padding: 0.125rem;
 				margin: -0.25rem;
-				> ${SItem} {
+				> ${SFlexItem} {
 					padding: 0.125rem;
 				}
 			`,
 			small: css`
 				padding: 0.25rem;
 				margin: -0.5rem;
-				> ${SItem} {
+				> ${SFlexItem} {
 					padding: 0.25rem;
 				}
 			`,
 			normal: css`
 				padding: 0.5rem;
 				margin: -1rem;
-				> ${SItem} {
+				> ${SFlexItem} {
 					padding: 0.5rem;
 				}
 			`,
 			large: css`
 				padding: 0.75rem;
 				margin: -1.5rem;
-				> ${SItem} {
+				> ${SFlexItem} {
 					padding: 0.75rem;
 				}
 			`,
 			xlarge: css`
 				padding: 1rem;
 				margin: -2rem;
-				> ${SItem} {
+				> ${SFlexItem} {
 					padding: 1rem;
 				}
 			`
