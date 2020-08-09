@@ -75,7 +75,7 @@ interface ISForm {
 	onSubmit?: object
 }
 
-const FormItem = ({ name, label, value, onChange }: IFormItem) => {
+const FormItem = ({ name, label, value, formik }: IFormItem) => {
 	const [isFocus, isFocusState] = useState(false)
 	const [isInput, isInputState] = useState(false)
 	return (
@@ -88,8 +88,8 @@ const FormItem = ({ name, label, value, onChange }: IFormItem) => {
 				onFocus={() => isFocusState(true)}
 				onInput={(ev: React.ChangeEvent<HTMLInputElement>) => {
 					isInputState(ev.target.value !== '')
-					onChange()
 				}}
+				onChange={formik.handleChange}
 				onBlur={() => isFocusState(false)}
 			/>
 		</SFormItem>
@@ -100,11 +100,10 @@ interface IFormItem {
 	name: string
 	label: string
 	value?: string
-	onChange?: any
+	formik?: any
 }
 
 const Form = ({ fields }: IForm) => {
-	console.log(fields)
 	const formik = useFormik({
 		initialValues: {
 			keyword: '',
@@ -117,26 +116,21 @@ const Form = ({ fields }: IForm) => {
 	})
 	return (
 		<SForm onSubmit={formik.handleSubmit}>
-			{fields && fields.map(({ name, label }) => (
-				<input
-					id={name}
-					name={name}
-					type="text"
-					value={formik.values[name]}
-					onChange={formik.handleChange}
-					required
-				/>
-			))}
-			<button type="submit">Enviar</button>
-			{/* <SItems spacing="normal" isAuto>
-				{fields &&
-					fields.map(({ name, label }: IFormItem, index) => (
-						<SItem key={index}>
-							<input id={name} name={name} type="text" value={formik.values[name]} onChange={formik.handleChange} />
-						</SItem>
-					))}
-			</SItems>
-			<SButton type="submit">Enviar</SButton> */}
+			<SFlex spacing="normal" isAuto>
+				{fields.map(({ name, label }, index) => (
+					<SFlexItem key={index}>
+						<FormItem
+							name={name}
+							label={label}
+							value={formik.values[name]}
+							formik={formik}
+						/>
+					</SFlexItem>
+				))}
+			</SFlex>
+			<SButton as="button" type="submit">
+				Enviar
+			</SButton>
 		</SForm>
 	)
 }
