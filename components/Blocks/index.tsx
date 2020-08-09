@@ -85,7 +85,7 @@ interface ISWrap {
 	spacing?: 'small' | 'normal' | 'large'
 }
 
-const SImg = styled.img<ISImg>`
+const SImage = styled.img<ISImage>`
 	display: block;
 	width: 100%;
 	height: auto;
@@ -99,7 +99,7 @@ const SImg = styled.img<ISImg>`
 		`}
 `
 
-interface ISImg {
+interface ISImage {
 	isCover?: boolean
 }
 
@@ -288,14 +288,14 @@ interface ISButton {
 	hasIcon?: boolean
 }
 
-const SItem = styled.li<ISItem>`
+const SFlexItem = styled.li<ISFlexItem>`
 	display: block;
 	width: 100%;
 `
 
-interface ISItem {}
+interface ISFlexItem {}
 
-const SItems = styled.ul<ISItems>`
+const SFlex = styled.ul<ISFlex>`
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -351,9 +351,9 @@ const SItems = styled.ul<ISItems>`
 		}[spacing]}
 `
 
-interface ISItems {
+interface ISFlex {
 	isAuto?: boolean
 	spacing?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
 }
 
-export { SWrap, SItems, SItem, SImg, STitle, SText, SLink, SButton }
+export { SWrap, SFlex, SFlexItem, STitle, SText, SImage, SLink, SButton }

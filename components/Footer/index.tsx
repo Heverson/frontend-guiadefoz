@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import { SIcon, SFacebook, SInstagram, SDiscord } from 'components/Icons'
-import { SWrap, SItems, SItem, STitle, SText, SButton, SLink } from 'components/Blocks'
-import Form, { SForm } from 'components/Form'
-import MCard, { SMCard } from 'components/MCard'
+import { SWrap, SFlex, SFlexItem, STitle, SText, SButton, SLink } from 'components/Blocks'
+import MiniCard, { SMiniCard } from 'components/MiniCard'
 
 const locals = [
 	{
@@ -23,7 +22,7 @@ const SSection = styled.section`
 	}
 	@media (min-width: 800px) {
 	}
-	${SMCard} {
+	${SMiniCard} {
 		> ${SText} {
 			color: #fff;
 		}
@@ -124,107 +123,106 @@ const Footer = () => (
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse nihil
 					illum eaque ullam labore praesentium. Expedita explicabo assumenda.
 				</SText>
-				<SItems isAuto spacing="xsmall">
-					<SItem>
+				<SFlex isAuto spacing="xsmall">
+					<SFlexItem>
 						<SButton href="#" target="_blank" type="empty" hasIcon>
 							<SFacebook />
 							Facebook
 						</SButton>
-					</SItem>
-					<SItem>
+					</SFlexItem>
+					<SFlexItem>
 						<SButton href="#" target="_blank" type="empty" hasIcon>
 							<SInstagram />
 							Instagram
 						</SButton>
-					</SItem>
-					<SItem>
+					</SFlexItem>
+					<SFlexItem>
 						<SButton href="#" target="_blank" type="empty" hasIcon>
 							<SDiscord />
 							Discord
 						</SButton>
-					</SItem>
-				</SItems>
+					</SFlexItem>
+				</SFlex>
 			</SSection>
 			<SSection>
 				<STitle as="h4" size="xsmall">
 					Informações
 				</STitle>
-				<SItems spacing="normal">
-					<SItem>
+				<SFlex spacing="normal">
+					<SFlexItem>
 						<Link href="/" passHref>
 							<SLink>Sobre nós</SLink>
 						</Link>
-					</SItem>
-					<SItem>
+					</SFlexItem>
+					<SFlexItem>
 						<Link href="/" passHref>
 							<SLink>Sobre nós</SLink>
 						</Link>
-					</SItem>
-					<SItem>
+					</SFlexItem>
+					<SFlexItem>
 						<Link href="/" passHref>
 							<SLink>Sobre nós</SLink>
 						</Link>
-					</SItem>
-					<SItem>
+					</SFlexItem>
+					<SFlexItem>
 						<Link href="/" passHref>
 							<SLink>Sobre nós</SLink>
 						</Link>
-					</SItem>
-				</SItems>
+					</SFlexItem>
+				</SFlex>
 			</SSection>
 			<SSection>
 				<STitle as="h4" size="xsmall">
 					Últimas empresas
 				</STitle>
-				<SItems spacing="small">
+				<SFlex spacing="small">
 					{locals.map((local, index) => (
-						<SItem key={index}>
-							<MCard tag="h5" title={local.name} />
-						</SItem>
+						<SFlexItem key={index}>
+							<MiniCard tag="h5" title={local.name} />
+						</SFlexItem>
 					))}
-				</SItems>
+				</SFlex>
 			</SSection>
 			<SSection>
 				<STitle as="h4" size="xsmall">
 					Boletim de notícias
 				</STitle>
-				<Form />
 			</SSection>
 		</SSections>
 		<SBottom isFlex isCenter spacing="small">
 			<SText as="small" size="small">CopyRight!</SText>
-			<SItems isAuto spacing="normal">
-				<SItem>
+			<SFlex isAuto spacing="normal">
+				<SFlexItem>
 					<Link href="/" passHref>
 						<SLink>Início</SLink>
 					</Link>
-				</SItem>
-				<SItem>
+				</SFlexItem>
+				<SFlexItem>
 					<Link href="/" passHref>
 						<SLink>Início</SLink>
 					</Link>
-				</SItem>
-				<SItem>
+				</SFlexItem>
+				<SFlexItem>
 					<Link href="/" passHref>
 						<SLink>Início</SLink>
 					</Link>
-				</SItem>
-				<SItem>
+				</SFlexItem>
+				<SFlexItem>
 					<Link href="/" passHref>
 						<SLink>Início</SLink>
 					</Link>
-				</SItem>
-				<SItem>
+				</SFlexItem>
+				<SFlexItem>
 					<Link href="/" passHref>
 						<SLink>Início</SLink>
 					</Link>
-				</SItem>
-				<SItem>
+				</SFlexItem>
+				<SFlexItem>
 					<Link href="/" passHref>
 						<SLink>Início</SLink>
 					</Link>
-				</SItem>
-			</SItems>
+				</SFlexItem>
+			</SFlex>
 		</SBottom>
 	</SFooter>
 )

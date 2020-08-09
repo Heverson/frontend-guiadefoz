@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { SWrap, SLink, SButton, SItems, SItem } from 'components/Blocks'
+import { SWrap, SLink, SButton, SFlex, SFlexItem } from 'components/Blocks'
 import { HomeSmile } from '@styled-icons/boxicons-regular'
 import {
 	Instagram,
@@ -174,42 +174,42 @@ const Header = () => (
 				</SLink>
 			</Link>
 			<SNavigation as="nav">
-				<SItems isAuto spacing="large">
+				<SFlex isAuto spacing="large">
 					{links.map((link, index) => (
-						<SItem key={index}>
+						<SFlexItem key={index}>
 							<Link href={link.href} passHref>
 								<SLink>{link.label}</SLink>
 							</Link>
-						</SItem>
+						</SFlexItem>
 					))}
-				</SItems>
+				</SFlex>
 			</SNavigation>
 			<SExtras>
-				<SItems isAuto spacing="small">
-					<SItem>
+				<SFlex isAuto spacing="small">
+					<SFlexItem>
 						<SLink href="https://github.com" rel="nofollow">
 							<Instagram size="40" title="Instagram" />
 							Instagram
 						</SLink>
-					</SItem>
-					<SItem>
+					</SFlexItem>
+					<SFlexItem>
 						<SLink href="https://github.com" rel="nofollow">
 							<FacebookSquare size="40" title="Facebook" />
 							Facebook
 						</SLink>
-					</SItem>
-					<SItem>
+					</SFlexItem>
+					<SFlexItem>
 						<SLink href="https://github.com" rel="nofollow">
 							<Discord size="40" title="Discord" />
 							Discord
 						</SLink>
-					</SItem>
-					<SItem>
+					</SFlexItem>
+					<SFlexItem>
 						<Link href="/cadastro" passHref>
 							<SButton size="small">Cadastre-se!</SButton>
 						</Link>
-					</SItem>
-				</SItems>
+					</SFlexItem>
+				</SFlex>
 			</SExtras>
 		</SWrap>
 	</SHeader>

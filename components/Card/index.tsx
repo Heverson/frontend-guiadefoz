@@ -1,4 +1,4 @@
-import { SWrap, SImg, STitle, SText, SLink } from 'components/Blocks'
+import { SWrap, SImage, STitle, SText, SLink } from 'components/Blocks'
 import Stars, { SStars } from 'components/Stars'
 import styled from 'styled-components'
 import Link from 'next/link'
@@ -11,7 +11,7 @@ const SCard = styled(SWrap)`
 	border-bottom: 1px solid #eee;
 	border-radius: 0.5rem;
 	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-	> ${SImg} {
+	> ${SImage} {
 		width: calc(100% + 2rem);
 		height: 12rem;
 		margin: -1rem -1rem 1rem;
@@ -49,7 +49,7 @@ const SCard = styled(SWrap)`
 
 const Card = ({ title }: ICard) => (
 	<SCard as="article">
-		<SImg src="/imagens/cupcakes.jpg" alt="" />
+		<SImage src="/imagens/cupcakes.jpg" alt="" />
 		<STitle as="h2" size="xsmall">
 			<Link href="/bete-empadinhas" passHref>
 				<SLink>{title}</SLink>

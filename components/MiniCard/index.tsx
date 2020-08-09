@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { SWrap, SImg, STitle } from 'components/Blocks'
+import { SWrap, SImage, STitle } from 'components/Blocks'
 import Stars, { SStars } from 'components/Stars'
 
-const SMCard = styled(SWrap)`
+const SMiniCard = styled(SWrap)`
 	position: relative;
 	flex-wrap: nowrap;
-	> ${SImg} {
+	> ${SImage} {
 		align-self: flex-start;
 		width: 4rem;
 		height: 4rem;
@@ -26,33 +26,33 @@ const SMCard = styled(SWrap)`
 		}
 	}
 	@media (min-width: 800px) {
-		> ${SImg} {
+		> ${SImage} {
 			width: 4.5rem;
 			height: 4.5rem;
 		}
 	}
 	@media (min-width: 1200px) {
-		> ${SImg} {
+		> ${SImage} {
 			width: 5rem;
 			height: 5rem;
 		}
 	}
 `
 
-const MCard = ({ tag, title }: IMCard) => (
-	<SMCard as="article" isFlex>
-		<SImg src="/imagens/cupcakes.jpg" alt="" />
+const MiniCard = ({ tag, title }: IMiniCard) => (
+	<SMiniCard as="article" isFlex>
+		<SImage src="/imagens/cupcakes.jpg" alt="" />
 		<SWrap>
 			<STitle as={tag}>{title}</STitle>
 			<Stars />
 		</SWrap>
-	</SMCard>
+	</SMiniCard>
 )
 
-interface IMCard {
+interface IMiniCard {
 	tag: 'h2' | 'h3' | 'h4' | 'h5'
 	title: string
 }
 
-export default MCard
-export { SMCard }
+export default MiniCard
+export { SMiniCard }
