@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { SWrap, SLink, SButton, SFlex, SFlexItem } from 'components/Blocks'
+import { SWrap, SFlex, SFlexItem, SLink, SButton } from 'components/Blocks'
 import { HomeSmile } from '@styled-icons/boxicons-regular'
 import {
 	Instagram,
@@ -9,8 +9,8 @@ import {
 } from '@styled-icons/boxicons-logos'
 
 const SNavigation = styled.nav`
-	> ${SItems} {
-		> ${SItem} {
+	> ${SFlex} {
+		> ${SFlexItem} {
 			> ${SLink} {
 				padding: 0.5rem;
 				margin: -0.5rem;
@@ -21,8 +21,8 @@ const SNavigation = styled.nav`
 		}
 	}
 	@media (min-width: 600px) {
-		> ${SItems} {
-			> ${SItem} {
+		> ${SFlex} {
+			> ${SFlexItem} {
 				&:first-child {
 					display: block;
 				}
@@ -30,8 +30,8 @@ const SNavigation = styled.nav`
 		}
 	}
 	@media (min-width: 800px) {
-		> ${SItems} {
-			> ${SItem} {
+		> ${SFlex} {
+			> ${SFlexItem} {
 				&:first-child {
 					display: none;
 				}
@@ -39,8 +39,8 @@ const SNavigation = styled.nav`
 		}
 	}
 	@media (min-width: 1000px) {
-		> ${SItems} {
-			> ${SItem} {
+		> ${SFlex} {
+			> ${SFlexItem} {
 				&:first-child {
 					display: block;
 				}
@@ -52,9 +52,9 @@ const SExtras = styled.div`
 	width: calc(100% + 0.25rem);
 	margin-top: 1.25rem;
 	margin-left: -0.25rem;
-	> ${SItems} {
+	> ${SFlex} {
 		flex-wrap: nowrap;
-		> ${SItem} {
+		> ${SFlexItem} {
 			> ${SLink} {
 				overflow: hidden;
 				width: 2rem;
@@ -73,8 +73,8 @@ const SExtras = styled.div`
 	@media (min-width: 800px) {
 		width: auto;
 		margin-top: 0;
-		> ${SItems} {
-			> ${SItem} {
+		> ${SFlex} {
+			> ${SFlexItem} {
 				&:last-child {
 					margin-left: 1rem;
 				}

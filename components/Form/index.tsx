@@ -117,7 +117,6 @@ const Form = ({ fields }: IForm) => {
 	})
 	return (
 		<SForm onSubmit={formik.handleSubmit}>
-			
 			{fields && fields.map(({ name, label }) => (
 				<input
 					id={name}
