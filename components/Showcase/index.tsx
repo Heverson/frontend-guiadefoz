@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { SWrapper, STitle, SText, SButton } from 'components/Blocks'
+import Slider from 'components/Slider'
 import Link from 'next/link'
 
 const SShowcase = styled.section`
@@ -21,6 +22,7 @@ const Showcase = () => (
 				laboriosam corrupti, error nam magni dicta, veniam excepturi ratione,
 				necessitatibus expedita doloribus praesentium!
 			</SText>
+			<Slider />
 			<Link href="/empresas" passHref>
 				<SButton>Todas as categorias</SButton>
 			</Link>
