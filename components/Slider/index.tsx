@@ -19,37 +19,35 @@ const SSlider = styled.div`
 	}
 `
 
-const Slider = ({}: ISlider) => {
+const Slider = ({ children }: ISlider) => {
 	const container = useRef(null)
-	
+
 	useEffect(() => {
 		const swiper = new Swiper(container.current, {
+			slidesPerView: 4,
 			containerModifierClass: 'is-',
 			slideClass: SFlexItem.styledComponentId,
 			slideActiveClass: 'is-active',
-			wrapperClass: SFlex.styledComponentId,
+			wrapperClass: SFlex.styledComponentId
 		})
-	}, [])
+	}, [container])
 
 	return (
 		<SSlider ref={container}>
 			<SFlex>
-				<SFlexItem>
-					<SImage src="/imagens/cupcakes.jpg" alt="" />
-				</SFlexItem>
-				<SFlexItem>
-					<SImage src="/imagens/cupcakes.jpg" alt="" />
-				</SFlexItem>
-				<SFlexItem>
-					<SImage src="/imagens/cupcakes.jpg" alt="" />
-				</SFlexItem>
+				{children.map((child, index) => (
+					<SFlexItem key={index}>
+						{child}
+					</SFlexItem>
+				))}
 			</SFlex>
 		</SSlider>
 	)
 }
 
 interface ISlider {
-	
+	children: any
 }
 
 export default Slider
+export { SSlider }
