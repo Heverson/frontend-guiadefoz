@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-const SWrap = styled.div<ISWrap>`
+const SWrapper = styled.div<ISWrapper>`
 	${({ isFlex }) =>
 		isFlex
 			? css`
@@ -79,7 +79,7 @@ const SWrap = styled.div<ISWrap>`
 		}[spacing]}
 `
 
-interface ISWrap {
+interface ISWrapper {
 	isFlex?: boolean
 	isCenter?: boolean
 	spacing?: 'small' | 'normal' | 'large'
@@ -356,4 +356,4 @@ interface ISFlex {
 	spacing?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
 }
 
-export { SWrap, SFlex, SFlexItem, STitle, SText, SImage, SLink, SButton }
+export { SWrapper, SFlex, SFlexItem, STitle, SText, SImage, SLink, SButton }

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { SWrap, SImage, STitle } from 'components/Blocks'
+import { SWrapper, SImage, STitle } from 'components/Blocks'
 import Stars, { SStars } from 'components/Stars'
 
-const SMiniCard = styled(SWrap)`
+const SMiniCard = styled(SWrapper)`
 	position: relative;
 	flex-wrap: nowrap;
 	> ${SImage} {
@@ -13,7 +13,7 @@ const SMiniCard = styled(SWrap)`
 		border-radius: 0.5rem;
 		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 	}
-	> ${SWrap} {
+	> ${SWrapper} {
 		padding-left: 1rem;
 		padding-bottom: 0.25rem;
 		> ${STitle} {
@@ -42,10 +42,10 @@ const SMiniCard = styled(SWrap)`
 const MiniCard = ({ tag, title }: IMiniCard) => (
 	<SMiniCard as="article" isFlex>
 		<SImage src="/imagens/cupcakes.jpg" alt="" />
-		<SWrap>
+		<SWrapper>
 			<STitle as={tag}>{title}</STitle>
 			<Stars />
-		</SWrap>
+		</SWrapper>
 	</SMiniCard>
 )
 

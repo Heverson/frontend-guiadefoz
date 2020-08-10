@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { SWrap, STitle, SText, SButton } from 'components/Blocks'
+import { SWrapper, STitle, SText, SButton } from 'components/Blocks'
 import Link from 'next/link'
 
 const SShowcase = styled.section`
 	position: relative;
-	> ${SWrap} {
+	> ${SWrapper} {
 		> ${STitle} {
 			margin-bottom: 2rem;
 		}
@@ -13,7 +13,7 @@ const SShowcase = styled.section`
 
 const Showcase = () => (
 	<SShowcase>
-		<SWrap spacing="normal" isCenter>
+		<SWrapper spacing="normal" isCenter>
 			<STitle size="normal">Categorias mais accesadas</STitle>
 			<SText>
 				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, veniam
@@ -24,7 +24,7 @@ const Showcase = () => (
 			<Link href="/empresas" passHref>
 				<SButton>Todas as categorias</SButton>
 			</Link>
-		</SWrap>
+		</SWrapper>
 	</SShowcase>
 )
 

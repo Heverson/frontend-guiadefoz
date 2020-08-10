@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { SWrap, SFlex, SFlexItem, STitle, SText } from 'components/Blocks'
+import { SWrapper, SFlex, SFlexItem, STitle, SText } from 'components/Blocks'
 import Form, { SForm } from 'components/Form'
 import Card, { SCard } from 'components/Card'
-import { useFormik } from 'formik'
 
 const fields = [
 	{
@@ -21,7 +20,7 @@ const fields = [
 ]
 
 const SWelcome = styled.header`
-	> ${SWrap} {
+	> ${SWrapper} {
 		> ${STitle} {
 			margin-bottom: 2rem;
 		}
@@ -42,7 +41,7 @@ const SWelcome = styled.header`
 		}
 	}
 	@media (min-width: 600px) {
-		> ${SWrap} {
+		> ${SWrapper} {
 			> ${SFlex} {
 				> ${SFlexItem} {
 					width: 50%;
@@ -51,21 +50,21 @@ const SWelcome = styled.header`
 		}
 	}
 	@media (min-width: 800px) {
-		> ${SWrap} {
+		> ${SWrapper} {
 			> ${STitle}, > ${SText} {
 				margin-right: 250px;
 			}
 		}
 	}
 	@media (min-width: 1000px) {
-		> ${SWrap} {
+		> ${SWrapper} {
 			> ${STitle}, > ${SText} {
 				margin-right: 300px;
 			}
 		}
 	}
 	@media (min-width: 1200px) {
-		> ${SWrap} {
+		> ${SWrapper} {
 			> ${STitle}, > ${SText} {
 				margin-right: 350px;
 			}
@@ -77,7 +76,7 @@ const SWelcome = styled.header`
 		}
 	}
 	@media (min-width: 1400px) {
-		> ${SWrap} {
+		> ${SWrapper} {
 			> ${STitle}, > ${SText} {
 				margin-right: 400px;
 			}
@@ -88,7 +87,7 @@ const SWelcome = styled.header`
 const Welcome = ({ title, description, cards }: IWelcome) => {
 	return (
 		<SWelcome>
-			<SWrap isCenter spacing="large">
+			<SWrapper isCenter spacing="large">
 				<STitle size="xlarge">{title}</STitle>
 				<SText size="large">{description}</SText>
 				<Form fields={fields} />
@@ -99,7 +98,7 @@ const Welcome = ({ title, description, cards }: IWelcome) => {
 						</SFlexItem>
 					))}
 				</SFlex>
-			</SWrap>
+			</SWrapper>
 		</SWelcome>
 	)
 }

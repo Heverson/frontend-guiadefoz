@@ -1,9 +1,9 @@
-import { SWrap, SImage, STitle, SText, SLink } from 'components/Blocks'
+import { SWrapper, SImage, STitle, SText, SLink } from 'components/Blocks'
 import Stars, { SStars } from 'components/Stars'
 import styled from 'styled-components'
 import Link from 'next/link'
 
-const SCard = styled(SWrap)`
+const SCard = styled(SWrapper)`
 	overflow: hidden;
 	position: relative;
 	padding: 1rem;
@@ -56,10 +56,10 @@ const Card = ({ title }: ICard) => (
 			</Link>
 		</STitle>
 		<Stars />
-		<SWrap isFlex>
+		<SWrapper isFlex>
 			<SText size="small">Vila C</SText>
 			<SText size="small">Preço médio</SText>
-		</SWrap>
+		</SWrapper>
 	</SCard>
 )
 

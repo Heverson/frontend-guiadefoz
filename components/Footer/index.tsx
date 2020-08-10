@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import { SIcon, SFacebook, SInstagram, SDiscord } from 'components/Icons'
-import { SWrap, SFlex, SFlexItem, STitle, SText, SButton, SLink } from 'components/Blocks'
+import { SWrapper, SFlex, SFlexItem, STitle, SText, SButton, SLink } from 'components/Blocks'
 import MiniCard, { SMiniCard } from 'components/MiniCard'
 
 const locals = [
@@ -28,7 +28,7 @@ const SSection = styled.section`
 		}
 	}
 `
-const SSections = styled(SWrap)`
+const SSections = styled(SWrapper)`
 	align-items: flex-start;
 	${STitle} {
 		color: #fff;
@@ -80,7 +80,7 @@ const SSections = styled(SWrap)`
 		}
 	}
 `
-const SBottom = styled(SWrap)`
+const SBottom = styled(SWrapper)`
 	position: relative;
 	color: #ECEFF1;
 	background: #455A64;

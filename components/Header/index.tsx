@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { SWrap, SFlex, SFlexItem, SLink, SButton } from 'components/Blocks'
+import { SWrapper, SFlex, SFlexItem, SLink, SButton } from 'components/Blocks'
 import { HomeSmile } from '@styled-icons/boxicons-regular'
 import {
 	Instagram,
@@ -97,7 +97,7 @@ const SHeader = styled.header`
 			color: #ff4081;
 		}
 	}
-	> ${SWrap} {
+	> ${SWrapper} {
 		> ${SLink} {
 			width: 100%;
 			padding: 0.5rem;
@@ -107,7 +107,7 @@ const SHeader = styled.header`
 		}
 	}
 	@media (min-width: 800px) {
-		> ${SWrap} {
+		> ${SWrapper} {
 			padding-top: 2rem !important;
 			padding-bottom: 2rem !important;
 			> ${SLink} {
@@ -121,7 +121,7 @@ const SHeader = styled.header`
 		}
 	}
 	@media (min-width: 1200px) {
-		> ${SWrap} {
+		> ${SWrapper} {
 			> ${SLink} {
 				font-size: 2rem;
 			}
@@ -132,7 +132,7 @@ const SHeader = styled.header`
 		}
 	}
 	@media (min-width: 1400px) {
-		> ${SWrap} {
+		> ${SWrapper} {
 			> ${SLink} {
 				width: auto;
 				margin-right: auto;
@@ -166,7 +166,7 @@ const links = [
 
 const Header = () => (
 	<SHeader>
-		<SWrap isFlex isCenter spacing="small">
+		<SWrapper isFlex isCenter spacing="small">
 			<Link href="/" passHref>
 				<SLink>
 					<HomeSmile />
@@ -211,7 +211,7 @@ const Header = () => (
 					</SFlexItem>
 				</SFlex>
 			</SExtras>
-		</SWrap>
+		</SWrapper>
 	</SHeader>
 )
 

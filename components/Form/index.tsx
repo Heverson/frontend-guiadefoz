@@ -72,12 +72,12 @@ const SForm = styled.form<ISForm>`
 `
 
 interface ISForm {
-	onSubmit?: object
+	
 }
 
 const FormItem = ({ name, label, value, formik }: IFormItem) => {
-	const [isFocus, isFocusState] = useState(false)
-	const [isInput, isInputState] = useState(false)
+	const [isFocus, setFocus] = useState(false)
+	const [isInput, setInput] = useState(false)
 	return (
 		<SFormItem isFocus={isFocus} isInput={isInput}>
 			<SLabel htmlFor={name}>{label}</SLabel>
@@ -85,12 +85,12 @@ const FormItem = ({ name, label, value, formik }: IFormItem) => {
 				id={name}
 				name={name}
 				value={value}
-				onFocus={() => isFocusState(true)}
+				onFocus={() => setFocus(true)}
 				onInput={(ev: React.ChangeEvent<HTMLInputElement>) => {
-					isInputState(ev.target.value !== '')
+					setInput(ev.target.value !== '')
 				}}
 				onChange={formik.handleChange}
-				onBlur={() => isFocusState(false)}
+				onBlur={() => setFocus(false)}
 			/>
 		</SFormItem>
 	)

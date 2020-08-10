@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { SWrap, STitle } from 'components/Blocks'
+import { SWrapper, STitle } from 'components/Blocks'
 
 const SCompany = styled.article`
 	overflow: hidden;
@@ -8,9 +8,9 @@ const SCompany = styled.article`
 
 const Company = () => (
 	<SCompany>
-		<SWrap spacing="large" isCenter>
+		<SWrapper spacing="large" isCenter>
 			<STitle size="large">Bete Empadinhas</STitle>
-		</SWrap>
+		</SWrapper>
 	</SCompany>
 )
 

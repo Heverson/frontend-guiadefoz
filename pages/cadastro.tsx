@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { SWrap, STitle, SText } from 'components/Blocks'
+import { SWrapper, STitle, SText } from 'components/Blocks'
 
 const SSignup = styled.section`
 	overflow: hidden;
@@ -8,12 +8,12 @@ const SSignup = styled.section`
 
 const Signup = () => (
 	<SSignup>
-		<SWrap spacing="large" isCenter>
+		<SWrapper spacing="large" isCenter>
 			<STitle as="h1" size="large">
 				Cadastre-se agora
 			</STitle>
 			<SText size="large">É simples e gratuito!</SText>
-		</SWrap>
+		</SWrapper>
 	</SSignup>
 )
 
