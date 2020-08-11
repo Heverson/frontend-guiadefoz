@@ -182,6 +182,13 @@ interface ISTitle {
 
 const SText = styled.p<ISText>`
 	display: block;
+	> svg {
+		display: inline-block;
+		vertical-align: middle;
+		width: 1em;
+		height: 1em;
+		margin-right: .5em;
+	}
 	${({ size }) => {
 		return {
 			small: css`
@@ -284,7 +291,7 @@ const SButton = styled.a<ISButton>`
 
 interface ISButton {
 	size?: 'small' | 'large'
-	type?: 'empty' | 'submit'
+	type?: 'empty' | 'submit' | 'button'
 	hasIcon?: boolean
 }
 
@@ -352,8 +359,8 @@ const SFlex = styled.ul<ISFlex>`
 `
 
 interface ISFlex {
-	isAuto?: boolean
 	spacing?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
+	isAuto?: boolean
 }
 
 export { SWrapper, SFlex, SFlexItem, STitle, SText, SImage, SLink, SButton }

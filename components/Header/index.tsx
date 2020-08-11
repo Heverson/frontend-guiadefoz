@@ -86,7 +86,7 @@ const SHeader = styled.header`
 	overflow: hidden;
 	position: relative;
 	z-index: 3;
-	background: #eee;
+	background: #fff;
 	${SLink} {
 		font-weight: 600;
 		color: #888;
