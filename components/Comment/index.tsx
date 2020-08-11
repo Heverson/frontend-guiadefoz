@@ -7,6 +7,7 @@ const SComment = styled.article`
 	border-radius: 0.5rem;
 	padding: 1.5rem;
 	margin-left: 7.5rem;
+	border-bottom: 1px solid #CFD8DC;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.05);
 	&::after {
 		position: absolute;
