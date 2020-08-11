@@ -5,20 +5,10 @@ const SComment = styled.article`
 	position: relative;
 	background: #fff;
 	border-radius: 0.5rem;
-	padding: 1.5rem;
+	padding: 4rem 1rem 1rem;
 	margin-left: 7.5rem;
-	border-bottom: 1px solid #CFD8DC;
-	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.05);
-	&::after {
-		position: absolute;
-		top: 2.5rem;
-		left: -0.5rem;
-		width: 1rem;
-		height: 1rem;
-		content: '';
-		background: #fff;
-		transform: rotateZ(45deg);
-	}
+	border-bottom: 1px solid #cfd8dc;
+	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 	> ${SImage} {
 		position: absolute;
 		top: 0;
@@ -34,10 +24,31 @@ const SComment = styled.article`
 			top: 6.5rem;
 			left: -7.5rem;
 			width: 6rem;
-			color: #546E7A;
+			color: #546e7a;
 			font-weight: 500;
 			text-align: center;
 		}
+	}
+	@media (min-width: 500px) {
+		padding: 1rem;
+		&::after {
+			position: absolute;
+			top: 2.5rem;
+			left: -0.5rem;
+			width: 1rem;
+			height: 1rem;
+			content: '';
+			background: #fff;
+			transform: rotateZ(45deg);
+		}
+		> ${SImage} {
+		}
+	}
+	@media (min-width: 800px) {
+		padding: 1.25rem;
+	}
+	@media (min-width: 1200px) {
+		padding: 1.5rem;
 	}
 `
 
