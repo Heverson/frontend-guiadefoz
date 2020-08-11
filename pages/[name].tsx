@@ -16,7 +16,7 @@ const SGallery = styled.figure`
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
-	height: 400px;
+	min-height: 20rem;
 	color: #b0bec5;
 	margin: 0;
 	background: #263238;
@@ -36,9 +36,48 @@ const SGallery = styled.figure`
 		background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0, transparent 100%);
 	}
 	> .swiper-container {
-		z-index: 1;
-		width: 1200px;
-		margin: 0 auto;
+		height: 100%;
+		> .swiper-wrapper {
+			> .swiper-slide {
+				opacity: 0.5;
+				transition: opacity 0.25s;
+			}
+			> .swiper-slide-active {
+				opacity: 1;
+			}
+		}
+	}
+	@media (min-width: 800px) {
+		> .swiper-container {
+			overflow: visible;
+			width: 750px;
+			margin: 0 auto;
+			> .swiper-wrapper {
+				> .swiper-slide {
+					box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0);
+					transition: opacity 0.25s, box-shadow 0.25s;
+				}
+				> .swiper-slide-active {
+					z-index: 2;
+					box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+				}
+			}
+		}
+	}
+	@media (min-width: 1000px) {
+		> .swiper-container {
+			width: 900px;
+		}
+	}
+	@media (min-width: 1200px) {
+		> .swiper-container {
+			width: 1050px;
+		}
+	}
+	@media (min-width: 1400px) {
+		> .swiper-container {
+			width: 1200px;
+		}
 	}
 `
 
@@ -58,7 +97,7 @@ const SHeading = styled.header`
 	position: relative;
 	z-index: 3;
 	background: #fff;
-	box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .05);
+	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
 	> ${SWrapper} {
 		justify-content: space-between;
 		> ${SImage} {
@@ -102,15 +141,15 @@ const SSection = styled.section`
 	}
 	&:nth-of-type(1) {
 		> ${SFlex} {
-			margin-top: .5rem;
+			margin-top: 0.5rem;
 			> ${SFlexItem} {
-				font-size: .9rem;
+				font-size: 0.9rem;
 			}
 		}
 	}
 	&:nth-of-type(2) {
 		> ${SFlex} {
-			margin-top: -.5rem;
+			margin-top: -0.5rem;
 		}
 	}
 `
@@ -120,9 +159,9 @@ const SContact = styled.aside`
 	position: relative;
 	height: 500px;
 	background: #fff;
-	border-bottom: 1px solid rgba(0, 0, 0, .2);
-	border-radius: .5rem;
-	box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 0.5rem;
+	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 	@media (min-width: 1000px) {
 		position: absolute;
 		top: 5rem;
@@ -152,11 +191,17 @@ const SContent = styled.div`
 				margin-bottom: 0;
 			}
 		}
+		> ${SContact} {
+			margin-top: 3rem;
+		}
 	}
 	@media (min-width: 1000px) {
 		> ${SWrapper} {
 			position: relative;
 			padding-right: 300px;
+			> ${SContact} {
+				margin-top: 0;
+			}
 		}
 	}
 	@media (min-width: 1200px) {
@@ -174,13 +219,43 @@ const SContent = styled.div`
 const SCompany = styled.article`
 	overflow: hidden;
 	position: relative;
-	padding-top: 400px;
+	padding-top: 20rem;
 	> ${SGallery} {
 		position: absolute;
 		top: 0;
 		right: 0;
 		left: 0;
-		height: 400px;
+		height: 20rem;
+	}
+	@media (min-width: 600px) {
+		padding-top: 22rem;
+		> ${SGallery} {
+			height: 22rem;
+		}
+	}
+	@media (min-width: 800px) {
+		padding-top: 24rem;
+		> ${SGallery} {
+			height: 24rem;
+		}
+	}
+	@media (min-width: 1000px) {
+		padding-top: 26rem;
+		> ${SGallery} {
+			height: 26rem;
+		}
+	}
+	@media (min-width: 1200px) {
+		padding-top: 28rem;
+		> ${SGallery} {
+			height: 28rem;
+		}
+	}
+	@media (min-width: 1400px) {
+		padding-top: 30rem;
+		> ${SGallery} {
+			height: 30rem;
+		}
 	}
 `
 
@@ -252,21 +327,21 @@ const Company = () => (
 			</SWrapper>
 		</SContent>
 		<SGallery>
-			<Swiper>
-				<SwiperSlide>
-					<SImage src="imagens/cupcakes.jpg" alt="" />
+			<Swiper wrapperTag="ul" slidesPerView={1}>
+				<SwiperSlide tag="li">
+					<SImage src="imagens/cupcakes.jpg" alt="" isCover />
 				</SwiperSlide>
-				<SwiperSlide>
-					<SImage src="imagens/cupcakes.jpg" alt="" />
+				<SwiperSlide tag="li">
+					<SImage src="imagens/cupcakes.jpg" alt="" isCover />
 				</SwiperSlide>
-				<SwiperSlide>
-					<SImage src="imagens/cupcakes.jpg" alt="" />
+				<SwiperSlide tag="li">
+					<SImage src="imagens/cupcakes.jpg" alt="" isCover />
 				</SwiperSlide>
-				<SwiperSlide>
-					<SImage src="imagens/cupcakes.jpg" alt="" />
+				<SwiperSlide tag="li">
+					<SImage src="imagens/cupcakes.jpg" alt="" isCover />
 				</SwiperSlide>
-				<SwiperSlide>
-					<SImage src="imagens/cupcakes.jpg" alt="" />
+				<SwiperSlide tag="li">
+					<SImage src="imagens/cupcakes.jpg" alt="" isCover />
 				</SwiperSlide>
 			</Swiper>
 		</SGallery>
