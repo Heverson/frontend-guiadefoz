@@ -10,6 +10,7 @@ import {
 } from 'components/Blocks'
 import { CheckCircle } from '@styled-icons/boxicons-solid'
 import Comment, { SComment } from 'components/Comment'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const SGallery = styled.figure`
 	overflow: hidden;
@@ -60,8 +61,15 @@ const SSection = styled.section`
 	}
 	> p {
 		margin: 1rem 0;
+		&:first-of-type {
+			margin-top: 1.5rem;
+		}
+		&:last-of-type {
+			margin-bottom: 1.5rem;
+		}
 	}
 	> ${SFlex} {
+		margin-top: 2rem;
 		> ${SFlexItem} {
 			> svg {
 				display: inline-block;
@@ -82,6 +90,7 @@ const SContent = styled.div`
 	overflow: hidden;
 	position: relative;
 	z-index: 2;
+	color: #37474F;
 	background: #eceff1;
 	@media (min-width: 800px) {
 		> ${SWrapper} {
@@ -173,10 +182,10 @@ const Company = () => (
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
 						facilis deleniti doloribus repellendus corrupti illum.
 					</p>
-					<SFlex>
+					<SFlex spacing="xlarge">
 						<SFlexItem>
 							<Comment
-								name="David Silva"
+								name="Ítalo Melo"
 								description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda facilis deleniti doloribus repellendus corrupti illum, veniam nemo blanditiis accusantium totam voluptas"
 							/>
 						</SFlexItem>
@@ -188,6 +197,7 @@ const Company = () => (
 			</SWrapper>
 		</SContent>
 		<SGallery>
+			
 		</SGallery>
 	</SCompany>
 )
