@@ -317,7 +317,7 @@ const Company = () => (
 					<SFlex spacing="xlarge">
 						<SFlexItem>
 							<Comment
-								name="Ítalo Melo"
+								name="Jefferson Caique"
 								description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda facilis deleniti doloribus repellendus corrupti illum, veniam nemo blanditiis accusantium totam voluptas"
 							/>
 						</SFlexItem>
