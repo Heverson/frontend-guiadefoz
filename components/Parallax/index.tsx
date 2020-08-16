@@ -14,7 +14,7 @@ const SParallax = styled.header`
     left: 0;
     z-index: 2;
     content: '';
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, 0.5);
   }
   > ${SWrapper} {
     position: relative;
@@ -46,20 +46,21 @@ const SParallax = styled.header`
   }
 `
 
-const Parallax = ({ title, description, children }: ParallaxProps) => (
+const Parallax = ({ title, description, src, alt }: ParallaxProps) => (
   <SParallax>
     <SWrapper spacing="small" isFlex isCenter>
       <STitle size="large">{title}</STitle>
       {description && <SText size="large">{description}</SText>}
     </SWrapper>
-    {children && children}
+    <SImage src={src} alt={alt} isCover />
   </SParallax>
 )
 
 interface ParallaxProps {
   title: string
   description?: string
-  children?: React.ReactNode
+  src: string
+  alt: string
 }
 
 export default Parallax
