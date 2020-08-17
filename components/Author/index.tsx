@@ -1,17 +1,13 @@
 import styled, { css } from 'styled-components'
 import { SFlex, SFlexItem, SImage, STitle, SText } from 'components/Blocks'
 
-const shadowCSS = css`
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-`
-
 const SAuthor = styled.section`
   position: relative;
   overflow: hidden;
   padding: 1rem;
   background: #fff;
   border-radius: .5rem;
-  ${shadowCSS}
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   > ${SFlex} {
     > ${SFlexItem} {
       width: 25%;
