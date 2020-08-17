@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, ThemeProps } from 'styled-components'
 
 const SWrapper = styled.div<ISWrapper>`
 	${({ isFlex }) =>
@@ -103,7 +103,7 @@ interface ISImage {
   isCover?: boolean
 }
 
-const STitle = styled.h1<ISTitle>`
+const STitle = styled.h1<STitleProps>`
   display: block;
   color: #1e88e5;
   font-weight: 700;
@@ -174,10 +174,18 @@ const STitle = styled.h1<ISTitle>`
       `
     }[size]
   }}
+  ${({ hasColon }) =>
+    hasColon &&
+    css`
+      &::after {
+        content: ':';
+      }
+    `}
 `
 
-interface ISTitle {
+interface STitleProps {
   size?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
+  hasColon?: boolean
 }
 
 const SText = styled.p<ISText>`
@@ -220,7 +228,7 @@ interface ISText {
   size?: 'small' | 'large'
 }
 
-const SLink = styled.a<ISLink>`
+const SLink = styled.a<SLinkProps>`
   display: block;
   text-decoration: none;
   > svg {
@@ -230,9 +238,24 @@ const SLink = styled.a<ISLink>`
     height: 1em;
     margin-right: 0.5rem;
   }
+  ${({ hasPseudo }) =>
+    hasPseudo &&
+    css`
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        pointer-events: auto;
+      }
+    `}
 `
 
-interface ISLink {}
+interface SLinkProps {
+  hasPseudo?: boolean
+}
 
 const SButton = styled.a<ISButton>`
 	display: inline-block;
