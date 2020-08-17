@@ -48,11 +48,12 @@ const SParallax = styled.header`
   }
 `
 
-const Parallax = ({ title, description, src, alt }: ParallaxProps) => {
+const Parallax: React.FC<ParallaxProps> = ({ title, description, src, alt }) => {
   const image = useRef(null)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
+      if (!image.current) return;
       image.current.style.transform = `translate3d(0, ${
         window.scrollY * 0.25
       }px, 0)`

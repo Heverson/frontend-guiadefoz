@@ -302,7 +302,7 @@ const SFlexItem = styled.li<ISFlexItem>`
 
 interface ISFlexItem {}
 
-const SFlex = styled.ul<ISFlex>`
+const SFlex = styled.ul<SFlexProps>`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -321,36 +321,31 @@ const SFlex = styled.ul<ISFlex>`
     spacing &&
     {
       xsmall: css`
-        padding: 0.125rem;
-        margin: -0.25rem;
+        margin: -0.125rem;
         > ${SFlexItem} {
           padding: 0.125rem;
         }
       `,
       small: css`
-        padding: 0.25rem;
-        margin: -0.5rem;
+        margin: -0.25rem;
         > ${SFlexItem} {
           padding: 0.25rem;
         }
       `,
       normal: css`
-        padding: 0.5rem;
-        margin: -1rem;
+        margin: -0.5rem;
         > ${SFlexItem} {
           padding: 0.5rem;
         }
       `,
       large: css`
-        padding: 0.75rem;
-        margin: -1.5rem;
+        margin: -0.75rem;
         > ${SFlexItem} {
           padding: 0.75rem;
         }
       `,
       xlarge: css`
-        padding: 1rem;
-        margin: -2rem;
+        margin: -1rem;
         > ${SFlexItem} {
           padding: 1rem;
         }
@@ -358,7 +353,7 @@ const SFlex = styled.ul<ISFlex>`
     }[spacing]}
 `
 
-interface ISFlex {
+interface SFlexProps {
   spacing?: 'xsmall' | 'small' | 'normal' | 'large' | 'xlarge'
   isAuto?: boolean
 }
