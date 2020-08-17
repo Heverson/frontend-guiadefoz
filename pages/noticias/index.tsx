@@ -37,7 +37,12 @@ const SNews = styled.section`
 
 const News = () => (
   <SNews>
-    <Parallax title="Notícias de Foz do Iguaçu" description="asdfasd" src="/imagens/birds.jpg" alt="" />
+    <Parallax
+      title="Notícias de Foz do Iguaçu"
+      description="asdfasd"
+      src="/imagens/birds.jpg"
+      alt=""
+    />
     <SWrapper spacing="small" isCenter>
       <SFlex spacing="xlarge">
         <SFlexItem>

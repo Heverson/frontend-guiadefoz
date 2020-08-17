@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import { SWrapper, SImage, STitle, SText } from 'components/Blocks'
 
@@ -37,6 +38,7 @@ const SParallax = styled.header`
     height: calc(100% + 2rem);
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
+    perspective: 1000;
   }
   @media (min-width: 800px) {
     height: 450px;
@@ -46,15 +48,27 @@ const SParallax = styled.header`
   }
 `
 
-const Parallax = ({ title, description, src, alt }: ParallaxProps) => (
-  <SParallax>
-    <SWrapper spacing="small" isFlex isCenter>
-      <STitle size="large">{title}</STitle>
-      {description && <SText size="large">{description}</SText>}
-    </SWrapper>
-    <SImage src={src} alt={alt} isCover />
-  </SParallax>
-)
+const Parallax = ({ title, description, src, alt }: ParallaxProps) => {
+  const image = useRef(null)
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      image.current.style.transform = `translate3d(0, ${
+        window.scrollY * 0.25
+      }px, 0)`
+    })
+  }, [image])
+
+  return (
+    <SParallax>
+      <SWrapper spacing="small" isFlex isCenter>
+        <STitle size="large">{title}</STitle>
+        {description && <SText size="large">{description}</SText>}
+      </SWrapper>
+      <SImage ref={image} src={src} alt={alt} isCover />
+    </SParallax>
+  )
+}
 
 interface ParallaxProps {
   title: string
