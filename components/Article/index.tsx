@@ -1,5 +1,13 @@
 import styled from 'styled-components'
-import { SFlex, SFlexItem, SImage, STitle, SText } from 'components/Blocks'
+import {
+  SFlex,
+  SFlexItem,
+  SImage,
+  STitle,
+  SText,
+  SLink
+} from 'components/Blocks'
+import Link from 'next/link'
 import { Calendar, CommentDetail } from '@styled-icons/boxicons-regular'
 
 const SArticle = styled.article`
@@ -31,7 +39,7 @@ const SArticle = styled.article`
       > svg {
         width: 1em;
         width: 1em;
-        margin-right: .5em;
+        margin-right: 0.5em;
       }
     }
   }
@@ -53,19 +61,22 @@ const SArticle = styled.article`
   }
 `
 
-const Article = ({ src, alt, title, intro }: ArticleProps) => (
+const Article = ({ src, alt, title, intro, slug }: ArticleProps) => (
   <SArticle>
     {src && <SImage src={src} alt={alt} isCover />}
-    <STitle size="small">{title}</STitle>
+    <STitle size="small">
+      <Link href={`/noticias/${slug}`} passHref>
+        <SLink>{title}</SLink>
+      </Link>
+    </STitle>
     <SText>{intro}</SText>
-    <SFlex as="div">
-      <SFlexItem as="p">
+    <SFlex as="p">
+      <SFlexItem as="span">
         <Calendar />
         06 Julho 20
       </SFlexItem>
-      <SFlexItem as="p">
-        <CommentDetail />
-        5 comentários
+      <SFlexItem as="span">
+        <CommentDetail />5 comentários
       </SFlexItem>
     </SFlex>
   </SArticle>
@@ -76,6 +87,7 @@ interface ArticleProps {
   alt?: string | ''
   title: string
   intro: string
+  slug: string
 }
 
 export default Article

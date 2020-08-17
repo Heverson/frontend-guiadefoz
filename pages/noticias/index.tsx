@@ -51,6 +51,7 @@ const News = () => (
             alt=""
             title="Lorem ipsum dolor sit amet consectetur adipisicing elit"
             intro="Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam excepturi, iusto explicabo laboriosam sunt illum quibusdam eos laborum amet odio inventore, beatae aliquid incidunt vero illo doloribus ex nam accusamus."
+            slug="post-01"
           />
         </SFlexItem>
         <SFlexItem>
@@ -59,6 +60,7 @@ const News = () => (
             alt=""
             title="Lorem ipsum dolor sit amet consectetur adipisicing elit"
             intro="Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam excepturi, iusto explicabo laboriosam sunt illum quibusdam eos laborum amet odio inventore, beatae aliquid incidunt vero illo doloribus ex nam accusamus."
+            slug="post-01"
           />
         </SFlexItem>
         <SFlexItem>
@@ -67,6 +69,7 @@ const News = () => (
             alt=""
             title="Lorem ipsum dolor sit amet consectetur adipisicing elit"
             intro="Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam excepturi, iusto explicabo laboriosam sunt illum quibusdam eos laborum amet odio inventore, beatae aliquid incidunt vero illo doloribus ex nam accusamus."
+            slug="post-01"
           />
         </SFlexItem>
       </SFlex>
