@@ -1,16 +1,19 @@
 import styled from 'styled-components'
 import { SImage, SText } from 'components/Blocks'
 
-const SHead = styled.header`
+const SCmntHead = styled.header`
   display: flex;
+  align-items: center;
   > ${SImage} {
     width: 4rem;
     height: 4rem;
     border-radius: 2rem;
   }
   > ${SText} {
-    color: #455a64;
+    margin-left: 1rem;
+    color: ${({ theme }) => theme.colors.bluegray[6] };
     font-weight: 400;
+    font-size: 1.1rem;
   }
   @media (min-width: 600px) {
     display: block;
@@ -39,8 +42,7 @@ const SHead = styled.header`
     }
   }
 `
-
-const SBody = styled.div`
+const SCmntBody = styled.div`
   position: relative;
   padding: 3rem 1rem 1rem;
   background: #fff;
@@ -74,30 +76,29 @@ const SBody = styled.div`
     }
   }
 `
-
 const SComment = styled.article`
-  > ${SHead} {
+  > ${SCmntHead} {
   }
-  > ${SBody} {
+  > ${SCmntBody} {
   }
   @media (min-width: 600px) {
     display: flex;
     align-items: flex-start;
-    > ${SHead} {
+    > ${SCmntHead} {
       flex-shrink: 0;
       width: 5rem;
     }
-    > ${SBody} {
+    > ${SCmntBody} {
       flex-grow: 1;
     }
   }
   @media (min-width: 800px) {
-    > ${SHead} {
+    > ${SCmntHead} {
       width: 5.5rem;
     }
   }
   @media (min-width: 1200px) {
-    > ${SHead} {
+    > ${SCmntHead} {
       width: 6rem;
     }
   }
@@ -105,18 +106,18 @@ const SComment = styled.article`
 
 const Comment = ({ name, description }: IComment) => (
   <SComment>
-    <SHead>
+    <SCmntHead>
       <SImage src="/imagens/italo.jpg" alt="" isCover />
       <SText as="h3" size="small">
         {name}
       </SText>
-    </SHead>
-    <SBody>
+    </SCmntHead>
+    <SCmntBody>
       <SText>{description}</SText>
       <SText as="time" size="small">
         Fas 3 días
       </SText>
-    </SBody>
+    </SCmntBody>
   </SComment>
 )
 
@@ -126,5 +127,4 @@ interface IComment {
 }
 
 export default Comment
-
-export { SComment }
+export { SComment, SCmntHead, SCmntBody }

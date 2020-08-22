@@ -3,6 +3,7 @@ import GlobalStyle from 'components/GlobalStyle'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo.config'
 import styled, { ThemeProvider } from 'styled-components'
+import theme from 'config/theme'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
@@ -13,7 +14,7 @@ const SMain = styled.main`
 `
 
 const App = ({ Component, pageProps }: AppProps) => (
-  <>
+  <ThemeProvider theme={theme}>
     <GlobalStyle />
     <DefaultSeo {...SEO} />
     <Header />
@@ -21,7 +22,7 @@ const App = ({ Component, pageProps }: AppProps) => (
       <Component {...pageProps} />
     </SMain>
     <Footer />
-  </>
+  </ThemeProvider>
 )
 
 export default App

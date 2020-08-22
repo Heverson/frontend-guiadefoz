@@ -7,10 +7,12 @@ import {
   STitle,
   SText,
   SButton
-} from 'components/Blocks'
+} from 'components/Styled'
 import { CheckCircle } from '@styled-icons/boxicons-solid'
 import Comment, { SComment } from 'components/Comment'
 import { Swiper, SwiperSlide } from 'swiper/react'
+
+//
 
 const SGallery = styled.figure`
   overflow: hidden;
@@ -80,6 +82,7 @@ const SGallery = styled.figure`
     }
   }
 `
+
 const SDetails = styled.div`
   margin: 0 auto 0 2rem;
   > ${STitle} {
@@ -90,6 +93,7 @@ const SDetails = styled.div`
     color: #555;
   }
 `
+
 const SHeading = styled.header`
   overflow: hidden;
   position: relative;
@@ -112,6 +116,7 @@ const SHeading = styled.header`
     }
   }
 `
+
 const SSection = styled.section`
   > ${STitle} {
     text-transform: uppercase;
@@ -150,6 +155,7 @@ const SSection = styled.section`
     }
   }
 `
+
 const SContact = styled.aside`
   overflow: hidden;
   position: relative;
@@ -173,6 +179,13 @@ const SContact = styled.aside`
     width: calc(400px - 5rem);
   }
 `
+
+const SServices = styled(SFlex)`
+  > ${SFlexItem} {
+    width: 33.33333%;
+  }
+`
+
 const SContent = styled.div`
   overflow: hidden;
   position: relative;
@@ -210,6 +223,7 @@ const SContent = styled.div`
     }
   }
 `
+
 const SCompany = styled.article`
   overflow: hidden;
   position: relative;
@@ -253,6 +267,8 @@ const SCompany = styled.article`
   }
 `
 
+//
+
 const Company = () => (
   <SCompany>
     <SHeading>
@@ -285,7 +301,7 @@ const Company = () => (
             blanditiis accusantium totam voluptas, earum repellat minus ullam
             vitae. Sint laudantium error est.
           </p>
-          <SFlex spacing="large">
+          <SServices spacing="large">
             <SFlexItem>
               <CheckCircle />
               Área para fumadores
@@ -298,7 +314,7 @@ const Company = () => (
               <CheckCircle />
               Área para fumadores
             </SFlexItem>
-          </SFlex>
+          </SServices>
         </SSection>
         <SSection>
           <STitle as="h2" size="xsmall">
