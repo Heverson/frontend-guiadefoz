@@ -80,7 +80,6 @@ const SGallery = styled.figure`
     }
   }
 `
-
 const SDetails = styled.div`
   margin: 0 auto 0 2rem;
   > ${STitle} {
@@ -91,7 +90,6 @@ const SDetails = styled.div`
     color: #555;
   }
 `
-
 const SHeading = styled.header`
   overflow: hidden;
   position: relative;
@@ -114,7 +112,6 @@ const SHeading = styled.header`
     }
   }
 `
-
 const SSection = styled.section`
   > ${STitle} {
     text-transform: uppercase;
@@ -153,7 +150,6 @@ const SSection = styled.section`
     }
   }
 `
-
 const SContact = styled.aside`
   overflow: hidden;
   position: relative;
@@ -177,7 +173,6 @@ const SContact = styled.aside`
     width: calc(400px - 5rem);
   }
 `
-
 const SContent = styled.div`
   overflow: hidden;
   position: relative;
@@ -215,7 +210,6 @@ const SContent = styled.div`
     }
   }
 `
-
 const SCompany = styled.article`
   overflow: hidden;
   position: relative;
