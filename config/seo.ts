@@ -1,3 +1,5 @@
+// Default SEO props for NextSEO
+
 export default {
   title: 'Guia de Foz',
   description: 'Guia comercial da cidade de Foz do Iguaçu',

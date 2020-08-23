@@ -1,11 +1,13 @@
 import type { AppProps } from 'next/app'
+
+import styled, { ThemeProvider } from 'styled-components'
 import GlobalStyle from 'components/GlobalStyle'
 import { DefaultSeo } from 'next-seo'
-import SEO from '../next-seo.config'
-import styled, { ThemeProvider } from 'styled-components'
-import theme from 'config/theme'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+
+import SEO from 'config/seo'
+import theme from 'config/theme'
 
 const SMain = styled.main`
   overflow: hidden;

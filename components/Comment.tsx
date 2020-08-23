@@ -4,6 +4,7 @@ import { SImage, SText } from 'components/Blocks'
 const SCmntHead = styled.header`
   display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
   > ${SImage} {
     width: 4rem;
     height: 4rem;
@@ -11,9 +12,8 @@ const SCmntHead = styled.header`
   }
   > ${SText} {
     margin-left: 1rem;
-    color: ${({ theme }) => theme.colors.bluegray[6] };
-    font-weight: 400;
-    font-size: 1.1rem;
+    color: ${({ theme }) => theme.colors.bluegray[6]};
+    font-weight: 600;
   }
   @media (min-width: 600px) {
     display: block;
@@ -44,24 +44,24 @@ const SCmntHead = styled.header`
 `
 const SCmntBody = styled.div`
   position: relative;
-  padding: 3rem 1rem 1rem;
+  padding: 1rem;
   background: #fff;
   border-bottom: 1px solid #cfd8dc;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  &::after {
+    position: absolute;
+    top: -0.5rem;
+    left: 1.5rem;
+    width: 1rem;
+    height: 1rem;
+    content: '';
+    background: #fff;
+    transform: rotateZ(45deg);
+  }
   @media (min-width: 600px) {
     padding: 1rem;
     margin-left: 1.5rem;
-    &::after {
-      position: absolute;
-      top: 2rem;
-      left: -0.5rem;
-      width: 1rem;
-      height: 1rem;
-      content: '';
-      background: #fff;
-      transform: rotateZ(45deg);
-    }
   }
   @media (min-width: 800px) {
     padding: 1.25rem;
