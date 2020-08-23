@@ -1,10 +1,11 @@
 import styled from 'styled-components'
-import { SImage, SText } from 'components/Blocks'
+import { SWrapper, SImage, SText } from 'components/Styled'
+import { TimeFive } from '@styled-icons/boxicons-regular'
 
 const SCmntHead = styled.header`
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   > ${SImage} {
     width: 4rem;
     height: 4rem;
@@ -14,24 +15,23 @@ const SCmntHead = styled.header`
     margin-left: 1rem;
     color: ${({ theme }) => theme.colors.bluegray[6]};
     font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5;
   }
   @media (min-width: 600px) {
     display: block;
+    margin-bottom: 0;
     > ${SImage} {
       width: 5rem;
       height: 5rem;
       border-radius: 2.5rem;
     }
     > ${SText} {
-      margin-top: 0.5rem;
+      margin-top: 0.75rem;
+      margin-left: 0;
+      font-weight: 400;
+      font-size: 0.9rem;
       text-align: center;
-    }
-  }
-  @media (min-width: 800px) {
-    > ${SImage} {
-      width: 5.5rem;
-      height: 5.5rem;
-      border-radius: 2.75rem;
     }
   }
   @media (min-width: 1200px) {
@@ -45,6 +45,7 @@ const SCmntHead = styled.header`
 const SCmntBody = styled.div`
   position: relative;
   padding: 1rem;
+  color: ${({ theme }) => theme.colors.gray[7]};
   background: #fff;
   border-bottom: 1px solid #cfd8dc;
   border-radius: 0.5rem;
@@ -59,15 +60,23 @@ const SCmntBody = styled.div`
     background: #fff;
     transform: rotateZ(45deg);
   }
+  > ${SWrapper} {
+    justify-content: space-between;
+    margin: 0.75rem -0.5rem -0.25rem;
+    color: ${({ theme }) => theme.colors.gray[5]};
+    > ${SText} {
+      padding: 0.25rem 0.5rem;
+    }
+  }
   @media (min-width: 600px) {
-    padding: 1rem;
     margin-left: 1.5rem;
+    &::after {
+      top: 2rem;
+      left: -0.5rem;
+    }
   }
   @media (min-width: 800px) {
     padding: 1.25rem;
-    &::after {
-      top: 2.25rem;
-    }
   }
   @media (min-width: 1200px) {
     padding: 1.5rem;
@@ -77,10 +86,6 @@ const SCmntBody = styled.div`
   }
 `
 const SComment = styled.article`
-  > ${SCmntHead} {
-  }
-  > ${SCmntBody} {
-  }
   @media (min-width: 600px) {
     display: flex;
     align-items: flex-start;
@@ -92,11 +97,6 @@ const SComment = styled.article`
       flex-grow: 1;
     }
   }
-  @media (min-width: 800px) {
-    > ${SCmntHead} {
-      width: 5.5rem;
-    }
-  }
   @media (min-width: 1200px) {
     > ${SCmntHead} {
       width: 6rem;
@@ -104,24 +104,28 @@ const SComment = styled.article`
   }
 `
 
-const Comment = ({ name, description }: IComment) => (
+const Comment: React.FC<CommentProps> = ({ name, description }) => (
   <SComment>
     <SCmntHead>
       <SImage src="/imagens/italo.jpg" alt="" isCover />
-      <SText as="h3" size="small">
-        {name}
-      </SText>
+      <SText as="h3">{name}</SText>
     </SCmntHead>
     <SCmntBody>
       <SText>{description}</SText>
-      <SText as="time" size="small">
-        Fas 3 días
-      </SText>
+      <SWrapper as="p" isFlex>
+        <SText as="time" size="small">
+          <TimeFive />
+          Fas 3 días
+        </SText>
+        <SText as="span" size="small">
+          Morador de Porto Meira
+        </SText>
+      </SWrapper>
     </SCmntBody>
   </SComment>
 )
 
-interface IComment {
+interface CommentProps {
   name: string
   description: string
 }

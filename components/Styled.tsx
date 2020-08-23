@@ -1,6 +1,6 @@
 import styled, { css, ThemeProps } from 'styled-components'
 
-// 
+//
 
 const SWrapper = styled.div<ISWrapper>`
 	${({ isFlex }) =>
@@ -87,7 +87,7 @@ interface ISWrapper {
   spacing?: 'small' | 'normal' | 'large'
 }
 
-// 
+//
 
 const SImage = styled.img<ISImage>`
   display: block;
@@ -107,7 +107,7 @@ interface ISImage {
   isCover?: boolean
 }
 
-// 
+//
 
 const STitle = styled.h1<STitleProps>`
   display: block;
@@ -194,7 +194,7 @@ interface STitleProps {
   hasColon?: boolean
 }
 
-// 
+//
 
 const SText = styled.p<ISText>`
   display: block;
@@ -203,6 +203,7 @@ const SText = styled.p<ISText>`
     vertical-align: middle;
     width: 1em;
     height: 1em;
+    margin-top: -1px;
     margin-right: 0.5em;
   }
   ${({ size }) => {
@@ -236,7 +237,7 @@ interface ISText {
   size?: 'small' | 'large'
 }
 
-// 
+//
 
 const SLink = styled.a<SLinkProps>`
   display: block;
@@ -267,7 +268,7 @@ interface SLinkProps {
   hasPseudo?: boolean
 }
 
-// 
+//
 
 const SButton = styled.a<ISButton>`
 	display: inline-block;
@@ -330,7 +331,7 @@ interface ISButton {
   hasIcon?: boolean
 }
 
-// 
+//
 
 const SFlexItem = styled.li<ISFlexItem>`
   display: block;
@@ -339,7 +340,7 @@ const SFlexItem = styled.li<ISFlexItem>`
 
 interface ISFlexItem {}
 
-// 
+//
 
 const SFlex = styled.ul<SFlexProps>`
   display: flex;
@@ -397,6 +398,6 @@ interface SFlexProps {
   isAuto?: boolean
 }
 
-// 
+//
 
 export { SWrapper, SFlex, SFlexItem, STitle, SText, SImage, SLink, SButton }
