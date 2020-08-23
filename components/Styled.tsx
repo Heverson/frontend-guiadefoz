@@ -13,8 +13,8 @@ const SWrapper = styled.div<ISWrapper>`
       : css`
           display: block;
         `}
-	${({ isCenter }) =>
-    isCenter &&
+	${({ isCentralized }) =>
+    isCentralized &&
     css`
       @media (min-width: 800px) {
         width: 750px;
@@ -83,7 +83,7 @@ const SWrapper = styled.div<ISWrapper>`
 
 interface ISWrapper {
   isFlex?: boolean
-  isCenter?: boolean
+  isCentralized?: boolean
   spacing?: 'small' | 'normal' | 'large'
 }
 

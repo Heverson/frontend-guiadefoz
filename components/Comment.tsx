@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import { SWrapper, SImage, SText } from 'components/Styled'
 import { TimeFive } from '@styled-icons/boxicons-regular'
+import { Map } from '@styled-icons/boxicons-solid'
 
 const SCmntHead = styled.header`
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   > ${SImage} {
     width: 4rem;
     height: 4rem;
@@ -115,9 +116,10 @@ const Comment: React.FC<CommentProps> = ({ name, description }) => (
       <SWrapper as="p" isFlex>
         <SText as="time" size="small">
           <TimeFive />
-          Fas 3 días
+          Faz 3 días
         </SText>
         <SText as="span" size="small">
+          <Map />
           Morador de Porto Meira
         </SText>
       </SWrapper>
