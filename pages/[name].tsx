@@ -9,8 +9,11 @@ import {
   SButton
 } from 'components/Styled'
 import { CheckCircle } from '@styled-icons/boxicons-solid'
+import Pricing from 'components/Pricing'
+import Rating from 'components/Rating'
 import Comment, { SComment } from 'components/Comment'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import Card from 'components/Card'
 
 //
 
@@ -82,7 +85,6 @@ const SGallery = styled.figure`
     }
   }
 `
-
 const SDetails = styled.div`
   margin: 0 auto 0 2rem;
   > ${STitle} {
@@ -93,7 +95,6 @@ const SDetails = styled.div`
     color: #555;
   }
 `
-
 const SHeading = styled.header`
   overflow: hidden;
   position: relative;
@@ -116,7 +117,6 @@ const SHeading = styled.header`
     }
   }
 `
-
 const SSection = styled.section`
   > ${STitle} {
     text-transform: uppercase;
@@ -155,7 +155,6 @@ const SSection = styled.section`
     }
   }
 `
-
 const SContact = styled.aside`
   overflow: hidden;
   position: relative;
@@ -179,13 +178,11 @@ const SContact = styled.aside`
     width: calc(400px - 5rem);
   }
 `
-
 const SServices = styled(SFlex)`
   > ${SFlexItem} {
     width: 33.33333%;
   }
 `
-
 const SContent = styled.div`
   overflow: hidden;
   position: relative;
@@ -223,7 +220,26 @@ const SContent = styled.div`
     }
   }
 `
-
+const SCompCards = styled.section`
+  position: relative;
+  background: ${({ theme }) => theme.colors.bluegray[0]};
+  > ${SWrapper} {
+    padding-top: 0;
+    > ${STitle} {
+      margin-bottom: 2rem;
+    }
+    > .swiper-container {
+      overflow: visible;
+      margin: -1rem;
+      width: calc(100% + 2rem);
+      > .swiper-wrapper {
+        > .swiper-slide {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+`
 const SCompany = styled.article`
   overflow: hidden;
   position: relative;
@@ -272,11 +288,13 @@ const SCompany = styled.article`
 const Company = () => (
   <SCompany>
     <SHeading>
-      <SWrapper spacing="small" isFlex isCenter>
+      <SWrapper spacing="small" isFlex isCentralized>
         <SImage src="/imagens/cupcakes.jpg" alt="" />
         <SDetails>
           <STitle size="normal">Bete Empadinhas</STitle>
           <SText>Comidas</SText>
+          <Pricing />
+          <Rating count={20} />
         </SDetails>
         <SButton as="button" type="button" size="large">
           Fale com a empresa
@@ -284,7 +302,7 @@ const Company = () => (
       </SWrapper>
     </SHeading>
     <SContent>
-      <SWrapper spacing="normal" isCenter>
+      <SWrapper spacing="normal" isCentralized>
         <SSection>
           <STitle as="h2" size="xsmall">
             Mais informacoes:
@@ -336,6 +354,34 @@ const Company = () => (
         <SContact></SContact>
       </SWrapper>
     </SContent>
+    <SCompCards>
+      <SWrapper spacing="large" isCentralized>
+        <STitle as="h2" hasColon>Locais relacionados</STitle>
+        <Swiper
+          breakpoints={{
+            600: {
+              slidesPerView: 2
+            },
+            1200: {
+              slidesPerView: 3
+            }
+          }}
+        >
+          <SwiperSlide>
+            <Card title="Empresa 01" region="VA" rating={3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card title="Empresa 01" region="VA" rating={3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card title="Empresa 01" region="VA" rating={3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card title="Empresa 01" region="VA" rating={3} />
+          </SwiperSlide>
+        </Swiper>
+      </SWrapper>
+    </SCompCards>
     <SGallery>
       <Swiper wrapperTag="ul" slidesPerView={1}>
         <SwiperSlide tag="li">
