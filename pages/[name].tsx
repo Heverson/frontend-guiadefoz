@@ -14,6 +14,7 @@ import Rating from 'components/Rating'
 import Comment, { SComment } from 'components/Comment'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Card from 'components/Card'
+import Social from 'components/Social'
 
 //
 
@@ -387,6 +388,19 @@ const Company = () => (
                 region="PM"
               />
             </SFlexItem>
+            <SFlexItem>
+              <Comment
+                name="Jefferson Caique"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda facilis deleniti doloribus repellendus corrupti illum, veniam nemo blanditiis accusantium totam voluptas"
+                region="KL"
+              />
+            </SFlexItem>
+            <SFlexItem>
+              <Comment
+                name="Jefferson Caique"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda facilis deleniti doloribus repellendus corrupti illum, veniam nemo blanditiis accusantium totam voluptas"
+              />
+            </SFlexItem>
           </SFlex>
         </SCompBodySection>
         <SCompBodySidebar>
@@ -404,6 +418,7 @@ const Company = () => (
           <SText size="small">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </SText>
+          <Social facebook="#" instagram="#" />
         </SCompBodySidebar>
       </SWrapper>
     </SCompBody>
