@@ -3,6 +3,21 @@ import { SWrapper, SImage, SText } from 'components/Styled'
 import { TimeFive } from '@styled-icons/boxicons-regular'
 import { Map } from '@styled-icons/boxicons-solid'
 
+const regions = {
+  TL: 'Três Lagoas',
+  VC: 'Vila C',
+  SF: 'São Francisco',
+  PM: 'Porto Meira',
+  SP: 'Jardim São Paulo',
+  VP: 'Vila Portes',
+  PI: 'Parque Imperatriz',
+  KL: 'KLP',
+  CE: 'Centro',
+  CI: 'Campos do Iguaçu',
+  CA: 'Carimã',
+  ML: 'Mista-Leste'
+}
+
 const SCmntHead = styled.header`
   display: flex;
   align-items: center;
@@ -105,7 +120,7 @@ const SComment = styled.article`
   }
 `
 
-const Comment: React.FC<CommentProps> = ({ name, description }) => (
+const Comment: React.FC<CommentProps> = ({ name, description, region }) => (
   <SComment>
     <SCmntHead>
       <SImage src="/imagens/italo.jpg" alt="" isCover />
@@ -118,10 +133,12 @@ const Comment: React.FC<CommentProps> = ({ name, description }) => (
           <TimeFive />
           Faz 3 días
         </SText>
-        <SText as="span" size="small">
-          <Map />
-          Morador de Porto Meira
-        </SText>
+        {region && (
+          <SText as="span" size="small">
+            <Map />
+            Morador da reg. {regions[region]}
+          </SText>
+        )}
       </SWrapper>
     </SCmntBody>
   </SComment>
@@ -130,6 +147,19 @@ const Comment: React.FC<CommentProps> = ({ name, description }) => (
 interface CommentProps {
   name: string
   description: string
+  region?:
+    | 'TL'
+    | 'VC'
+    | 'SF'
+    | 'PM'
+    | 'SP'
+    | 'VP'
+    | 'PI'
+    | 'KL'
+    | 'CE'
+    | 'CI'
+    | 'CA'
+    | 'ML'
 }
 
 export default Comment
