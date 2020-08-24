@@ -17,7 +17,23 @@ import Card from 'components/Card'
 
 //
 
-const SGallery = styled.figure`
+const SDetails = styled.div`
+  margin: 0 auto 0 2rem;
+  > ${STitle} {
+    margin-bottom: 0.25rem;
+    color: #222;
+  }
+  > ${SText} {
+    color: #555;
+  }
+`
+const SServices = styled(SFlex)`
+  > ${SFlexItem} {
+    width: 33.33333%;
+  }
+`
+
+const SCompImages = styled.figure`
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -85,64 +101,83 @@ const SGallery = styled.figure`
     }
   }
 `
-const SDetails = styled.div`
-  margin: 0 auto 0 2rem;
-  > ${STitle} {
-    margin-bottom: 0.25rem;
-    color: #222;
-  }
-  > ${SText} {
-    color: #555;
-  }
-`
-const SHeading = styled.header`
-  overflow: hidden;
+const SCompCards = styled.section`
   position: relative;
-  z-index: 3;
-  background: #fff;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+  background: ${({ theme }) => theme.colors.bluegray[0]};
   > ${SWrapper} {
-    justify-content: space-between;
-    > ${SImage} {
-      width: 5rem;
-      height: 5rem;
-      object-fit: cover;
-      border-radius: 2.5rem;
+    padding-top: 0;
+    > ${STitle} {
+      margin-bottom: 2rem;
     }
-  }
-  @media (min-width: 800px) {
-    > ${SWrapper} {
-      padding-top: 2rem !important;
-      padding-bottom: 2rem !important;
+    > .swiper-container {
+      overflow: visible;
+      margin: -1rem;
+      width: calc(100% + 2rem);
+      > .swiper-wrapper {
+        > .swiper-slide {
+          padding: 1rem;
+        }
+      }
     }
   }
 `
-const SContact = styled.aside`
-  overflow: hidden;
+const SCompBodySidebar = styled.aside`
   position: relative;
-  height: 500px;
+  overflow: hidden;
+  padding: 1rem;
   background: #fff;
+  color: ${({ theme }) => theme.colors.gray[6]};
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  > iframe {
+    width: calc(100% + 2rem);
+    height: 300px;
+    margin: -1rem -1rem 1rem;
+    background: #f6f7f8;
+  }
+  > ${STitle} {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  @media (min-width: 600px) {
+    > iframe {
+      height: 260px;
+    }
+  }
+  @media (min-width: 800px) {
+    padding: 1.25rem;
+    > iframe {
+      width: calc(100% + 2.5rem);
+      height: 220px;
+      margin: -1.25rem -1.25rem 1rem;
+    }
+  }
   @media (min-width: 1000px) {
     position: absolute;
     top: 5rem;
     right: 1rem;
     top: 4rem;
     width: calc(300px - 4.5rem);
+    > iframe {
+      height: 300px;
+    }
   }
   @media (min-width: 1200px) {
     top: 5rem;
     width: calc(350px - 5rem);
+    padding: 1.5rem;
+    > iframe {
+      width: calc(100% + 3rem);
+      height: 280px;
+      margin: -1.5rem -1.5rem 1rem;
+    }
   }
   @media (min-width: 1400px) {
     width: calc(400px - 5rem);
-  }
-`
-const SServices = styled(SFlex)`
-  > ${SFlexItem} {
-    width: 33.33333%;
+    > iframe {
+      height: 260px;
+    }
   }
 `
 const SCompBodySection = styled.section`
@@ -196,7 +231,7 @@ const SCompBody = styled.div`
         margin-bottom: 0;
       }
     }
-    > ${SContact} {
+    > ${SCompBodySidebar} {
       margin-top: 3rem;
     }
   }
@@ -204,7 +239,7 @@ const SCompBody = styled.div`
     > ${SWrapper} {
       position: relative;
       padding-right: 300px;
-      > ${SContact} {
+      > ${SCompBodySidebar} {
         margin-top: 0;
       }
     }
@@ -220,23 +255,25 @@ const SCompBody = styled.div`
     }
   }
 `
-const SCompCards = styled.section`
+const SCompHead = styled.header`
+  overflow: hidden;
   position: relative;
-  background: ${({ theme }) => theme.colors.bluegray[0]};
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
   > ${SWrapper} {
-    padding-top: 0;
-    > ${STitle} {
-      margin-bottom: 2rem;
+    justify-content: space-between;
+    > ${SImage} {
+      width: 5rem;
+      height: 5rem;
+      object-fit: cover;
+      border-radius: 2.5rem;
     }
-    > .swiper-container {
-      overflow: visible;
-      margin: -1rem;
-      width: calc(100% + 2rem);
-      > .swiper-wrapper {
-        > .swiper-slide {
-          padding: 1rem;
-        }
-      }
+  }
+  @media (min-width: 800px) {
+    > ${SWrapper} {
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
     }
   }
 `
@@ -244,7 +281,7 @@ const SCompany = styled.article`
   overflow: hidden;
   position: relative;
   padding-top: 20rem;
-  > ${SGallery} {
+  > ${SCompImages} {
     position: absolute;
     top: 0;
     right: 0;
@@ -253,31 +290,31 @@ const SCompany = styled.article`
   }
   @media (min-width: 600px) {
     padding-top: 22rem;
-    > ${SGallery} {
+    > ${SCompImages} {
       height: 22rem;
     }
   }
   @media (min-width: 800px) {
     padding-top: 24rem;
-    > ${SGallery} {
+    > ${SCompImages} {
       height: 24rem;
     }
   }
   @media (min-width: 1000px) {
     padding-top: 26rem;
-    > ${SGallery} {
+    > ${SCompImages} {
       height: 26rem;
     }
   }
   @media (min-width: 1200px) {
     padding-top: 28rem;
-    > ${SGallery} {
+    > ${SCompImages} {
       height: 28rem;
     }
   }
   @media (min-width: 1400px) {
     padding-top: 30rem;
-    > ${SGallery} {
+    > ${SCompImages} {
       height: 30rem;
     }
   }
@@ -287,7 +324,7 @@ const SCompany = styled.article`
 
 const Company = () => (
   <SCompany>
-    <SHeading>
+    <SCompHead>
       <SWrapper spacing="small" isFlex isCentralized>
         <SImage src="/imagens/cupcakes.jpg" alt="" />
         <SDetails>
@@ -300,7 +337,7 @@ const Company = () => (
           Fale com a empresa
         </SButton>
       </SWrapper>
-    </SHeading>
+    </SCompHead>
     <SCompBody>
       <SWrapper spacing="normal" isCentralized>
         <SCompBodySection>
@@ -352,12 +389,29 @@ const Company = () => (
             </SFlexItem>
           </SFlex>
         </SCompBodySection>
-        <SContact></SContact>
+        <SCompBodySidebar>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4160.752491131133!2d-54.55823522146453!3d-25.4955940574814!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbf2ed25e1cdcadbb!2sBett%C2%B4s%20Empadinhas!5e0!3m2!1ses-419!2sbr!4v1598298371890!5m2!1ses-419!2sbr"
+            width="600"
+            height="450"
+            frameBorder="0"
+            tabIndex={0}
+            allowFullScreen
+          ></iframe>
+          <STitle as="h2" size="xsmall" hasColon>
+            Localização
+          </STitle>
+          <SText size="small">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </SText>
+        </SCompBodySidebar>
       </SWrapper>
     </SCompBody>
     <SCompCards>
       <SWrapper spacing="large" isCentralized>
-        <STitle as="h2" hasColon>Locais relacionados</STitle>
+        <STitle as="h2" hasColon>
+          Locais relacionados
+        </STitle>
         <Swiper
           breakpoints={{
             600: {
@@ -383,7 +437,7 @@ const Company = () => (
         </Swiper>
       </SWrapper>
     </SCompCards>
-    <SGallery>
+    <SCompImages>
       <Swiper wrapperTag="ul" slidesPerView={1}>
         <SwiperSlide tag="li">
           <SImage src="imagens/cupcakes.jpg" alt="" isCover />
@@ -401,7 +455,7 @@ const Company = () => (
           <SImage src="imagens/cupcakes.jpg" alt="" isCover />
         </SwiperSlide>
       </Swiper>
-    </SGallery>
+    </SCompImages>
   </SCompany>
 )
 
