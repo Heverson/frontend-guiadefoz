@@ -117,7 +117,35 @@ const SHeading = styled.header`
     }
   }
 `
-const SSection = styled.section`
+const SContact = styled.aside`
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  @media (min-width: 1000px) {
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    top: 4rem;
+    width: calc(300px - 4.5rem);
+  }
+  @media (min-width: 1200px) {
+    top: 5rem;
+    width: calc(350px - 5rem);
+  }
+  @media (min-width: 1400px) {
+    width: calc(400px - 5rem);
+  }
+`
+const SServices = styled(SFlex)`
+  > ${SFlexItem} {
+    width: 33.33333%;
+  }
+`
+const SCompBodySection = styled.section`
   > ${STitle} {
     text-transform: uppercase;
   }
@@ -155,42 +183,14 @@ const SSection = styled.section`
     }
   }
 `
-const SContact = styled.aside`
-  overflow: hidden;
-  position: relative;
-  height: 500px;
-  background: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  @media (min-width: 1000px) {
-    position: absolute;
-    top: 5rem;
-    right: 1rem;
-    top: 4rem;
-    width: calc(300px - 4.5rem);
-  }
-  @media (min-width: 1200px) {
-    top: 5rem;
-    width: calc(350px - 5rem);
-  }
-  @media (min-width: 1400px) {
-    width: calc(400px - 5rem);
-  }
-`
-const SServices = styled(SFlex)`
-  > ${SFlexItem} {
-    width: 33.33333%;
-  }
-`
-const SContent = styled.div`
+const SCompBody = styled.div`
   overflow: hidden;
   position: relative;
   z-index: 2;
   color: #37474f;
   background: #eceff1;
   > ${SWrapper} {
-    > ${SSection} {
+    > ${SCompBodySection} {
       margin-bottom: 3rem;
       &:last-of-type {
         margin-bottom: 0;
@@ -301,9 +301,9 @@ const Company = () => (
         </SButton>
       </SWrapper>
     </SHeading>
-    <SContent>
+    <SCompBody>
       <SWrapper spacing="normal" isCentralized>
-        <SSection>
+        <SCompBodySection>
           <STitle as="h2" size="xsmall">
             Mais informacoes:
           </STitle>
@@ -333,8 +333,8 @@ const Company = () => (
               Área para fumadores
             </SFlexItem>
           </SServices>
-        </SSection>
-        <SSection>
+        </SCompBodySection>
+        <SCompBodySection>
           <STitle as="h2" size="xsmall">
             Comentários:
           </STitle>
@@ -347,13 +347,14 @@ const Company = () => (
               <Comment
                 name="Jefferson Caique"
                 description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda facilis deleniti doloribus repellendus corrupti illum, veniam nemo blanditiis accusantium totam voluptas"
+                region="PM"
               />
             </SFlexItem>
           </SFlex>
-        </SSection>
+        </SCompBodySection>
         <SContact></SContact>
       </SWrapper>
-    </SContent>
+    </SCompBody>
     <SCompCards>
       <SWrapper spacing="large" isCentralized>
         <STitle as="h2" hasColon>Locais relacionados</STitle>
