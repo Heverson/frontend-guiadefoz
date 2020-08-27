@@ -5,12 +5,12 @@ const SPricing = styled.div`
   position: relative;
   > svg {
     display: inline-block;
-    width: .9rem;
-    height: .9rem;
+    width: 0.9rem;
+    height: 0.9rem;
   }
 `
 
-const Pricing = () => (
+const Pricing: React.FC<PricingProps> = ({ value }) => (
   <SPricing>
     <Dollar />
     <Dollar />
@@ -19,6 +19,10 @@ const Pricing = () => (
     <Dollar />
   </SPricing>
 )
+
+interface PricingProps {
+  value: 1 | 2 | 3 | 4 | 5
+}
 
 export default Pricing
 export { SPricing }
