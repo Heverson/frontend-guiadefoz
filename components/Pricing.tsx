@@ -12,11 +12,9 @@ const SPricing = styled.div`
 
 const Pricing: React.FC<PricingProps> = ({ value }) => (
   <SPricing>
-    <Dollar />
-    <Dollar />
-    <Dollar />
-    <Dollar />
-    <Dollar />
+    {Array(value).map(() => (
+      <Dollar />
+    ))}
   </SPricing>
 )
 
