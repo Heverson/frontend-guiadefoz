@@ -1,20 +1,30 @@
 import styled from 'styled-components'
 import { Dollar } from '@styled-icons/boxicons-regular'
 
+const SBlackDollar = styled(Dollar)`
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  color: #333;
+`
+
+const SGrayDollar = styled(Dollar)`
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  color: #999;
+`
+
 const SPricing = styled.div`
   position: relative;
-  > svg {
-    display: inline-block;
-    width: 0.9rem;
-    height: 0.9rem;
-  }
+  display: flex;
 `
 
 const Pricing: React.FC<PricingProps> = ({ value }) => (
   <SPricing>
-    {Array(value).map(() => (
-      <Dollar />
-    ))}
+    {Array(value).map(num =>
+      num < value - 1 ? <SBlackDollar /> : <SGrayDollar />
+    )}
   </SPricing>
 )
 
