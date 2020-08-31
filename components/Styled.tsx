@@ -296,7 +296,11 @@ const SButton = styled.a<ISButton>`
     hasIcon &&
     css`
       overflow: hidden;
-      white-space: nowrap;
+      > svg {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: .5rem;
+      }
     `}
 	${({ size }) =>
     size &&
