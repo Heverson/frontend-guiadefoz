@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { SWrapper, SFlex, SFlexItem, STitle, SText } from 'components/Blocks'
+import { SWrapper, SFlex, SFlexItem, STitle, SText } from 'components/Styled'
 import Form, { SForm } from 'components/Form'
 import Card, { SCard } from 'components/Card'
 
@@ -87,7 +87,7 @@ const SWelcome = styled.header`
 const Welcome = ({ title, description, cards }: IWelcome) => {
   return (
     <SWelcome>
-      <SWrapper isCenter spacing="large">
+      <SWrapper spacing="large" isCentralized>
         <STitle size="xlarge">{title}</STitle>
         <SText size="large">{description}</SText>
         <Form fields={fields} />
