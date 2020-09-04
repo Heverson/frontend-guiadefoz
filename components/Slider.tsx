@@ -7,9 +7,13 @@ const SSlider = styled.div`
   position: relative;
   display: block;
   > ${SFlex} {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
     > ${SFlexItem} {
       flex-shrink: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 `
@@ -25,13 +29,25 @@ const Slider: React.FC<SliderProps> = ({
   useEffect(() => {
     if (!container.current) return
     
+    let breakpoints
+
+    if (items) {
+      breakpoints = {}
+      for (let key in items) {
+        breakpoints[key] = {
+          slidesPerView: items[key]
+        }
+      }
+    }
+
     const options = {
       slidesPerView: 1,
+      breakpoints,
       containerModifierClass: 'is-',
       slideClass: SFlexItem.styledComponentId,
       wrapperClass: SFlex.styledComponentId
     }
-    
+
     const swiper = new Swiper(container.current, options)
   }, [])
 

@@ -9,6 +9,7 @@ import {
 } from 'components/Styled'
 import Slider, { SSlider } from 'components/Slider'
 import Category from 'components/Category'
+import { Dumbbell } from '@styled-icons/boxicons-regular'
 import Link from 'next/link'
 
 const SShowcase = styled.section`
@@ -48,10 +49,12 @@ const Showcase = () => (
         items={{
           '400': 1,
           '800': 2,
-          '1200': 3
+          '1200': 4
         }}
       >
-        <Category count={7} title="Academias" />
+        <Category count={7} title="Academias">
+          <Dumbbell />
+        </Category>
         <Category count={3} title="Restaurantes" />
         <Category count={12} title="Cafeterias" />
         <Category count={23} title="Comida rápida" />
