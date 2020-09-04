@@ -44,7 +44,13 @@ const Showcase = () => (
         quisquam! Dolor, vel provident. Quaerat consequuntur repellendus
         laboriosam corrupti, error nam magni dicta.
       </SText>
-      <Slider>
+      <Slider
+        items={{
+          '400': 1,
+          '800': 2,
+          '1200': 3
+        }}
+      >
         <Category count={7} title="Academias" />
         <Category count={3} title="Restaurantes" />
         <Category count={12} title="Cafeterias" />

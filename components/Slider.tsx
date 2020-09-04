@@ -7,7 +7,9 @@ const SSlider = styled.div`
   position: relative;
   display: block;
   > ${SFlex} {
+    flex-wrap: wrap;
     > ${SFlexItem} {
+      flex-shrink: 0;
     }
   }
 `
@@ -22,12 +24,12 @@ const Slider: React.FC<SliderProps> = ({
 
   useEffect(() => {
     if (!container.current) return
-
+    
     const options = {
       slidesPerView: 1,
       containerModifierClass: 'is-',
-      slideClass: SFlexItem.componentId,
-      wrapperClass: SFlex.componentId
+      slideClass: SFlexItem.styledComponentId,
+      wrapperClass: SFlex.styledComponentId
     }
     
     const swiper = new Swiper(container.current, options)
@@ -53,11 +55,12 @@ const Slider: React.FC<SliderProps> = ({
 }
 
 interface SliderProps {
-  items?: (number, string){}
+  items?: {
+    [key: string]: number
+  }
   pagination?: boolean
   navigation?: boolean
 }
 
 export default Slider
-
 export { SSlider }
