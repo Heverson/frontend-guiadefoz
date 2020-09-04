@@ -1,9 +1,6 @@
 import styled from 'styled-components'
-import { STitle, SText, SButton } from 'components/Blocks'
-import { CoffeeTogo, Dumbbell } from '@styled-icons/boxicons-regular'
+import { STitle, SText, SButton } from 'components/Styled'
 import Circle, { SCircle } from 'components/Circle'
-
-const SDumbbell = styled(Dumbbell)``
 
 const SCategory = styled.article`
   display: block;
@@ -38,10 +35,10 @@ const SCategory = styled.article`
   }
 `
 
-const Category = ({ count, title }: CategoryProps) => (
+const Category: React.FC<CategoryProps> = ({ children, count, title }) => (
   <SCategory>
     <Circle>
-      <SDumbbell />
+      {children}
     </Circle>
     <STitle size="large">{count}</STitle>
     <SText size="small">{title}</SText>

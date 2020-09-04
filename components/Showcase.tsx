@@ -9,7 +9,8 @@ import {
 } from 'components/Styled'
 import Slider, { SSlider } from 'components/Slider'
 import Category from 'components/Category'
-import { Dumbbell } from '@styled-icons/boxicons-regular'
+import { Dumbbell, Cookie, GlassesAlt } from '@styled-icons/boxicons-regular'
+import { Capsule } from '@styled-icons/boxicons-solid'
 import Link from 'next/link'
 
 const SShowcase = styled.section`
@@ -55,9 +56,27 @@ const Showcase = () => (
         <Category count={7} title="Academias">
           <Dumbbell />
         </Category>
-        <Category count={3} title="Restaurantes" />
-        <Category count={12} title="Cafeterias" />
-        <Category count={23} title="Comida rápida" />
+        <Category count={4} title="Farmácias">
+          <Capsule />
+        </Category>
+        <Category count={12} title="Cafeterias">
+          <Cookie />
+        </Category>
+        <Category count={23} title="Óticas">
+          <GlassesAlt />
+        </Category>
+        <Category count={7} title="Academias">
+          <Dumbbell />
+        </Category>
+        <Category count={4} title="Farmácias">
+          <Capsule />
+        </Category>
+        <Category count={12} title="Cafeterias">
+          <Cookie />
+        </Category>
+        <Category count={23} title="Óticas">
+          <GlassesAlt />
+        </Category>
       </Slider>
       <Link href="/empresas" passHref>
         <SButton>Todas as categorias</SButton>
