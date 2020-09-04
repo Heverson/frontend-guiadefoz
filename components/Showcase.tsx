@@ -6,7 +6,7 @@ import {
   STitle,
   SText,
   SButton
-} from 'components/Blocks'
+} from 'components/Styled'
 import Slider, { SSlider } from 'components/Slider'
 import Category from 'components/Category'
 import Link from 'next/link'
@@ -37,7 +37,7 @@ const SShowcase = styled.section`
 
 const Showcase = () => (
   <SShowcase>
-    <SWrapper spacing="normal" isCenter>
+    <SWrapper spacing="normal" isCentralized>
       <STitle size="normal">Categorias mais accesadas</STitle>
       <SText>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, veniam

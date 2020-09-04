@@ -53,10 +53,11 @@ const Slider: React.FC<SliderProps> = ({
 }
 
 interface SliderProps {
-  items: number
-  breakpoints: object
-  pagination: boolean
-  navigation: boolean
+  items?: (number, string){}
+  pagination?: boolean
+  navigation?: boolean
 }
 
 export default Slider
+
+export { SSlider }
