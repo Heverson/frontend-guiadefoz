@@ -331,7 +331,6 @@ const Company = () => (
         <SDetails>
           <STitle size="normal">Bete Empadinhas</STitle>
           <SText>Comidas</SText>
-          <Pricing />
           <Rating count={20} />
         </SDetails>
         <SButton as="button" type="button" size="large">
