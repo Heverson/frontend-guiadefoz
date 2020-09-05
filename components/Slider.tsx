@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useEffect, useRef, Children } from 'react'
+import { useEffect, useRef, Children, FC } from 'react'
 import { Swiper } from 'swiper'
 import { SFlex, SFlexItem, SText } from 'components/Styled'
 
@@ -18,14 +18,16 @@ const SSlider = styled.div`
   }
 `
 
-const Slider: React.FC<SliderProps> = ({
+const Slider: FC<SliderProps> = ({
   children,
   items,
-  pagination,
+  hasArrows,
   navigation
 }) => {
   const container = useRef(null)
-
+  const prev = useRef(null)
+  const next = useRef(null)
+  
   useEffect(() => {
     if (!container.current) return
     
@@ -74,7 +76,7 @@ interface SliderProps {
   items?: {
     [key: string]: number
   }
-  pagination?: boolean
+  hasArrows?: boolean
   navigation?: boolean
 }
 

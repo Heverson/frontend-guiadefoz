@@ -9,8 +9,8 @@ import {
 } from 'components/Styled'
 import Slider, { SSlider } from 'components/Slider'
 import Category from 'components/Category'
-import { Dumbbell, Cookie, GlassesAlt } from '@styled-icons/boxicons-regular'
-import { Capsule } from '@styled-icons/boxicons-solid'
+import { Dumbbell, Cookie, GlassesAlt, Bone, Chair } from '@styled-icons/boxicons-regular'
+import { Capsule, GasPump, Pizza } from '@styled-icons/boxicons-solid'
 import Link from 'next/link'
 
 const SShowcase = styled.section`
@@ -48,10 +48,11 @@ const Showcase = () => (
       </SText>
       <Slider
         items={{
-          '400': 1,
-          '800': 2,
+          '500': 2,
+          '800': 3,
           '1200': 4
         }}
+        hasArrows
       >
         <Category count={7} title="Academias">
           <Dumbbell />
@@ -65,17 +66,17 @@ const Showcase = () => (
         <Category count={23} title="Óticas">
           <GlassesAlt />
         </Category>
-        <Category count={7} title="Academias">
-          <Dumbbell />
+        <Category count={5} title="Pet Shops">
+          <Bone />
         </Category>
-        <Category count={4} title="Farmácias">
-          <Capsule />
+        <Category count={9} title="Lojas de móveis">
+          <Chair />
         </Category>
-        <Category count={12} title="Cafeterias">
-          <Cookie />
+        <Category count={12} title="Postos de combustível">
+          <GasPump />
         </Category>
-        <Category count={23} title="Óticas">
-          <GlassesAlt />
+        <Category count={23} title="Pizzarias">
+          <Pizza />
         </Category>
       </Slider>
       <Link href="/empresas" passHref>
