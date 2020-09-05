@@ -91,13 +91,23 @@ const Welcome = ({ title, description, cards }: IWelcome) => {
         <STitle size="xlarge">{title}</STitle>
         <SText size="large">{description}</SText>
         <Form fields={fields} />
-        <SFlex spacing="xlarge">
-          {cards.map(card => (
-            <SFlexItem key={card.id}>
-              <Card title={card.name} rating={5} region="CE" whatsapp={card.whatsapp} email={card.email} />
-            </SFlexItem>
-          ))}
-        </SFlex>
+        {cards ? (
+          <SFlex spacing="xlarge">
+            {cards?.map(card => (
+              <SFlexItem key={card.id}>
+                <Card
+                  title={card.name}
+                  rating={5}
+                  region="CE"
+                  whatsapp={card.whatsapp}
+                  email={card.email}
+                />
+              </SFlexItem>
+            ))}
+          </SFlex>
+        ) : (
+          <SText>Carregando...</SText>
+        )}
       </SWrapper>
     </SWelcome>
   )

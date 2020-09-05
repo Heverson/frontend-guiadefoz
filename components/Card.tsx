@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { SWrapper, SImage, STitle, SText, SLink } from 'components/Blocks'
+import { SWrapper, SImage, STitle, SText, SLink } from 'components/Styled'
 import Stars, { SStars } from 'components/Stars'
 import styled from 'styled-components'
 import Link from 'next/link'
