@@ -1,24 +1,40 @@
+import { GetStaticProps } from 'next'
+import useSWR from 'swr'
+
 import Welcome from 'components/Welcome'
 import Showcase from 'components/Showcase'
 
-const Home = ({ cards }) => (
-  <>
-    <Welcome
-      title="Guia de empresas, produtos e serviços em Foz do Iguaçu"
-      description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos tempore deleniti repudiandae nam vel? Cum recusandae veniam itaque, magni dolor ipsum nobis, corporis eligendi."
-      cards={cards}
-    />
-    <Showcase />
-  </>
-)
+const Home = ({ cards }) => {
+  const { data, error } = useSWR(
+    'https://backend-guiadefoz.herokuapp.com/company',
+    async url => {
+      const resp = await fetch(url)
+      const data = await resp.json()
+      return data
+    }
+  )
 
-const getStaticProps = async () => {
+  console.log(data)
+
+  return (
+    <>
+      <Welcome
+        title="Guia de empresas, produtos e serviços em Foz do Iguaçu"
+        description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos tempore deleniti repudiandae nam vel? Cum recusandae veniam itaque, magni dolor ipsum nobis, corporis eligendi."
+        cards={cards}
+      />
+      <Showcase />
+    </>
+  )
+}
+
+const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       cards: [
         {
           id: 1,
-          name: 'Bete Empadinhas'
+          name: 'Bete Empadinhass'
         },
         {
           id: 2,
