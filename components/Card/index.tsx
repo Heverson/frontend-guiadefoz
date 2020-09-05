@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { SWrapper, SImage, STitle, SText, SLink } from 'components/Blocks'
 import Stars, { SStars } from 'components/Stars'
 import styled from 'styled-components'
@@ -47,7 +48,7 @@ const SCard = styled(SWrapper)`
   }
 `
 
-const Card = ({ title }: ICard) => (
+const Card: FC<CardProps> = ({ title, rating, whatsapp, email, region }) => (
   <SCard as="article">
     <SImage src="/imagens/cupcakes.jpg" alt="" />
     <STitle as="h2" size="xsmall">
@@ -55,6 +56,7 @@ const Card = ({ title }: ICard) => (
         <SLink>{title}</SLink>
       </Link>
     </STitle>
+    <SText>{email}</SText>
     <Stars />
     <SWrapper isFlex>
       <SText size="small">Vila C</SText>
@@ -63,9 +65,11 @@ const Card = ({ title }: ICard) => (
   </SCard>
 )
 
-interface ICard {
+interface CardProps {
   title: string
   rating: number
+  email: string
+  whatsapp: string
   region: 'CE' | 'VA' | 'VB'
 }
 

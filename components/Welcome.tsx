@@ -94,7 +94,7 @@ const Welcome = ({ title, description, cards }: IWelcome) => {
         <SFlex spacing="xlarge">
           {cards.map(card => (
             <SFlexItem key={card.id}>
-              <Card title={card.name} rating={5} region="CE" />
+              <Card title={card.name} rating={5} region="CE" whatsapp={card.whatsapp} email={card.email} />
             </SFlexItem>
           ))}
         </SFlex>
