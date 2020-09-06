@@ -2,6 +2,7 @@ import useSWR from 'swr'
 import { GetStaticProps } from 'next'
 import Welcome from 'components/Welcome'
 import Showcase from 'components/Showcase'
+import Testimonials from 'components/Testimonials'
 
 const Home = ({ cards }) => {
   const { data, error } = useSWR(
@@ -21,7 +22,7 @@ const Home = ({ cards }) => {
         cards={data}
       />
       <Showcase />
-      <Marketing />
+      <Testimonials />
     </>
   )
 }
