@@ -1,6 +1,5 @@
-import { GetStaticProps } from 'next'
 import useSWR from 'swr'
-
+import { GetStaticProps } from 'next'
 import Welcome from 'components/Welcome'
 import Showcase from 'components/Showcase'
 
@@ -14,16 +13,15 @@ const Home = ({ cards }) => {
     }
   )
 
-  console.log(data)
-
   return (
     <>
       <Welcome
         title="Guia de empresas, produtos e serviços em Foz do Iguaçu"
         description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos tempore deleniti repudiandae nam vel? Cum recusandae veniam itaque, magni dolor ipsum nobis, corporis eligendi."
-        cards={cards}
+        cards={data}
       />
       <Showcase />
+      <Marketing />
     </>
   )
 }
