@@ -50,7 +50,8 @@ const Slider: FC<SliderProps> = ({
   children,
   items,
   hasArrows,
-  hasBullets
+  hasBullets,
+  isLooped
 }) => {
   const containerRef = useRef(null)
   const prevRef = useRef(null)
@@ -89,11 +90,13 @@ const Slider: FC<SliderProps> = ({
         bulletActiveClass: 'is-active'
       }
     }
-
-    const swiper = new Swiper(containerRef.current, {
+    
+    new Swiper(containerRef.current, {
       slidesPerView: 1,
       breakpoints,
       navigation,
+      loop: isLooped ? true : false,
+      loopAdditionalSlides: 2,
       containerModifierClass: 'is-',
       slideClass: SFlexItem.styledComponentId,
       slideActiveClass: 'is-active',
@@ -102,6 +105,8 @@ const Slider: FC<SliderProps> = ({
       slideDuplicateClass: 'is-clone',
       slideNextClass: 'is-next',
       slideDuplicateNextClass: 'is-next',
+      slidePrevClass: 'is-prev',
+      slideDuplicatePrevClass: 'is-prev',
       wrapperClass: SFlex.styledComponentId
     })
   }, [containerRef, prevRef, nextRef, bulletsRef])
@@ -142,6 +147,7 @@ interface SliderProps {
   }
   hasArrows?: boolean
   hasBullets?: boolean
+  isLooped?: boolean
 }
 
 export default Slider

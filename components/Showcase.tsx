@@ -54,6 +54,7 @@ const Showcase = () => (
         }}
         hasArrows
         hasBullets
+        isLooped
       >
         <Category count={7} title="Academias">
           <Dumbbell />
