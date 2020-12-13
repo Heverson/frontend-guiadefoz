@@ -14,18 +14,22 @@ const Signup = () => (
         Cadastre-se agora
       </STitle>
       <SText size="large">É simples e gratuito!</SText>
-      <Form items={[
-        {
-          name: 'username',
-          label: 'Nome de usuário',
-          type: 'text'
-        },
-        {
-          name: 'password',
-          label: 'Senha',
-          type: 'password'
-        }
-      ]}/>
+      <Form
+        items={[
+          {
+            name: 'username',
+            label: 'Nome de usuário',
+            type: 'text',
+            required: true
+          },
+          {
+            name: 'password',
+            label: 'Senha',
+            type: 'password',
+            required: true
+          }
+        ]}
+      />
     </SWrapper>
   </SSignup>
 )
